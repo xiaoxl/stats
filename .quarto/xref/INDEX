@@ -1,0 +1,50 @@
+{
+  "contents/0/inferences.qmd": {
+    "inferences.html": "72bc1a3f"
+  },
+  "index.qmd": {
+    "index.html": "11c4758c"
+  },
+  "contents/0/rv.qmd": {
+    "rv.html": "353c20f1"
+  },
+  "contents/0/prob.qmd": {
+    "prob.html": "9024302a"
+  },
+  "contents/0/rv1.qmd": {
+    "rv1.html": "a77c25ae"
+  },
+  "contents/1/notations.qmd": {
+    "notations.html": "cc6fc8a8"
+  },
+  "contents/1/dist/binom.qmd": {
+    "binom.html": "b8e59124"
+  },
+  "contents/1/dist/beta.qmd": {
+    "beta.html": "f16596c5"
+  },
+  "contents/1/dist/chisquare.qmd": {
+    "chisquare.html": "da903e22"
+  },
+  "contents/1/dist/poisson.qmd": {
+    "poisson.html": "45c20615"
+  },
+  "contents/1/dist/gamma.qmd": {
+    "gamma.html": "5b86114a"
+  },
+  "contents/1/dist/normal.qmd": {
+    "normal.html": "3e32aa6a"
+  },
+  "contents/2/bayes.qmd": {
+    "bayes.html": "a1bdc55d"
+  },
+  "contents/2/bayesthm.qmd": {
+    "bayesthm.html": "2bd466fc"
+  },
+  "contents/references.qmd": {
+    "references.html": "dd715a7c"
+  },
+  "contents/app/specialfunctions.qmd": {
+    "specialfunctions.html": "54ea4d36"
+  }
+}

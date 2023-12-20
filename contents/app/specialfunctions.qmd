@@ -1,0 +1,73 @@
+# Special functions
+
+
+
+
+## Gamma functions
+
+::: {#def-gamma-function}
+## Gamma function
+Let $z$ be any complex number that $\mathfrak R(z)>0$. Then 
+$$
+\Gamma(z)=\int_0^{\infty}t^{z-1}\me^{-t}\dl3t.
+$$ {#eq-gamma-function}
+:::
+
+
+::: {#thm-gamma-factorial}
+$$
+\Gamma(z+1)=z\Gamma(z).
+$$ {#eq-gamma-factorial}
+::: 
+::: {.proof}
+$$
+\begin{split}
+    \Gamma(z+1)&=\int_0^{\infty}t^{z+1-1}\me^{-t}\dl3t=-\int_0^{\infty}t^{z+1-1}\dl3\me^{-t}\\
+    &=-t\me^{-t}\biggr\rvert_0^{\infty}+\int_0^{\infty}\me^{-t}\dl3t^{z}=\int_0^{\infty}zt^{z-1}\me^{-t}\dl3t=z\Gamma(z).
+\end{split}
+$$
+
+:::
+
+
+
+
+## Beta functions
+
+
+::: {#def-beta-function}
+## Beta function
+Let $z_1$, $z_2$ be two complex numbers that $\mathfrak R(z_1),\mathfrak R(z_2)>0$. Then
+$$
+B(z_1,z_2)=\int_0^1t^{z_1-1}(1-t)^{z_2-1}\dl3t.
+$$ {#eq-beta-function}
+:::
+
+
+::: {#thm-beta-gammarelation}
+## Relations between Beta functions and Gamma functions
+$$
+\Gamma(\alpha)\Gamma(\beta)=\Gamma(\alpha+\beta)B(\alpha, \beta).
+$$ {#eq-beta-gammarelation}
+:::
+
+::: {.proof}
+Use the following trick to change a product of two integrals into a double integral.
+$$
+\begin{align}
+\Gamma(\alpha)\Gamma(\beta)&=\int_0^{\infty}u^{\alpha-1}\me^{-u}\dl3u\int_0^{\infty}v^{\beta-1}\me^{-v}\dl3v\\
+&=\int_0^{\infty}\int_0^{\infty}u^{\alpha-1}v^{\beta-1}\me^{-u-v}\dl3u\dl3v.
+\end{align}
+$$
+
+Set $u=st$, $v=s-st$. Then $s=u+v$, $t=\dfrac{u}{u+v}$, and $\abs{\dfrac{\partial(u,v)}{\partial(s,t)}}=\abs{\mqty[t&s\\1-t&-s]}=s$. Then
+$$\begin{split}
+    \Gamma(\alpha)\Gamma(\beta)&=\int_0^{\infty}\int_0^{\infty}u^{\alpha-1}v^{\beta-1}\me^{-u-v}\dl3u\dl3v\\
+    &=\int_{v=0}^{v=\infty}\int_{u=0}^{u=\infty}(st)^{\alpha-1}(s(1-t))^{\beta-1}\me^{-s}s\dl3s\dl3t\\
+    &=\int_{t=0}^{t=1}\int_{s=0}^{s=\infty}s^{\alpha+\beta-1}t^{\alpha-1}(1-t)^{\beta-1}\me^{-s}\dl3s\dl3t\\
+    &=\int_{0}^{\infty}s^{\alpha+\beta-1}\me^{-s}\dl3s\int_{0}^{1}t^{\alpha-1}(1-t)^{\beta-1}\dl3t\\
+    &=\Gamma(\alpha+\beta)B(\alpha,\beta).
+\end{split}$$ 
+
+:::
+

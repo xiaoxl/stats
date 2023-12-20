@@ -1,0 +1,228 @@
+[
+  {
+    "objectID": "contents/0/inferences.html#general-theory",
+    "href": "contents/0/inferences.html#general-theory",
+    "title": "2  Inferences",
+    "section": "2.1 General theory",
+    "text": "2.1 General theory\nCited from [1, Chapter 4].\n\n2.1.1 Point estimation\nConsider a random variable \\(X\\) with an unknown distribution. Our information about the distribution of \\(X\\) comes from a sample on \\(X\\). The sample ovservations have the same distribution as \\(X\\), and we denote them as the random variables \\(X_1, X_2,\\ldots,X_n\\), where \\(n\\) denotes the sample size. When the sample is actually drawn, we use \\(x_1,\\ldots,x_n\\) as the realizations of the sample.\n\nDefinition 2.1 (Random sample) If the random variables \\(X_1,\\ldots, X_n\\) are iid, then these random variable constitute a random sample of size \\(n\\) from the common distribution.\n\n\nDefinition 2.2 (Statistics) Let \\(X_1,\\ldots,X_n\\) denote a sample on a random variable \\(X\\). Let \\(T=T(X_1,\\ldots,X_n)\\) be a function of the sample. \\(T\\) is called a statistic. Once the sample is drawn, \\(t=T(x_1,\\ldots,x_n)\\) is called the realization of \\(T\\).\n\nAssume that the distribution of \\(X\\) is known down to an unknown parameter \\(\\theta\\) where \\(\\theta\\) can be a vector. Then the pdf of \\(X\\) can be written as \\(f(x;\\theta)\\). In this case we might find some statistic \\(T\\) to estimate \\(\\theta\\). This is called a point estimator of \\(\\theta\\). A realization \\(t\\) is called an estimate of \\(\\theta\\).\n\nDefinition 2.3 (Unbiasedness) Let \\(X_1,\\ldots,X_n\\) is a sample on a random varaible \\(X\\) with pdf \\(f(x;\\theta)\\). Let \\(T\\) be a statistic. We say that \\(T\\) is an unbiased estimator of \\(\\theta\\) if \\(E(T)=\\theta\\).\n\nLet \\(X\\) be a random variable, with mean \\(\\mu\\) and variance \\(\\sigma^2\\). Consider a sample \\(\\set{X_i}\\) of size \\(n\\). By definition all \\(X_i\\)’s are iid. Therefore \\(\\Exp\\qty(X_i)=\\mu\\), and \\(\\Var\\qty(X_i)=\\sigma^2\\) for any \\(i=1,\\ldots, N\\).\nConsider the following statistics:\n\n\\(\\bar{\\mu}=\\dfrac1N\\sum_{i=1}^NX_i\\),\n\\(\\bar{\\sigma}^2=\\dfrac{1}{N-1}\\sum_{i=1}^N(X_i-\\bar{\\mu})^2\\).\n\n\nLemma 2.1  \n\n\\(\\Exp(\\bar{\\mu})=\\mu\\).\n\\(\\Exp(\\bar{\\sigma}^2)=\\sigma^2\\).\n\n\n\n\n\n\n\n\nProof\n\n\n\n\n\n\\[\n\\begin{aligned}\n\\Exp\\qty(\\bar{\\mu})&=\\Exp\\qty(\\frac1N\\sum_{i=1}^NX_i)=\\frac1N\\sum_{i=1}^N\\Exp\\qty(X_i)=\\frac1N\\sum_{i=1}^N\\mu=\\mu,\\\\\n\\Exp\\qty(\\bar{\\sigma}^2)&=\\frac{1}{N-1}\\Exp\\qty[\\sum_{i=1}^N(X_i-\\bar{\\mu})^2]=\\frac{1}{N-1}\\sum_{i=1}^N\\Exp\\mqty[\\qty(X_i-\\bar{\\mu})^2]\\\\\n&=\\frac{1}{N-1}\\sum_{i=1}^N\\qty(\\Var\\qty(X_i-\\bar{\\mu})+\\qty(\\Exp\\qty(X_i-\\bar{\\mu}))^2)\\\\\n&=\\frac{1}{N-1}\\sum_{i=1}^N\\qty(\\Var\\qty(\\frac{N-1}{N}X_i-\\frac1NX_1-\\ldots-\\frac1NX_N)+\\qty(\\Exp\\qty(X_i)-\\Exp\\qty(\\bar{\\mu}))^2)\\\\\n&=\\frac{1}{N-1}\\sum_{i=1}^N\\qty(\\frac{(N-1)^2}{N^2}\\Var\\qty(X_i)+\\frac1{N^2}\\Var\\qty(X_1)+\\ldots+\\frac1{N^2}\\Var\\qty(X_N))\\\\\n&=\\frac{1}{N-1}\\sum_{i=1}^N\\qty(\\frac{(N-1)^2}{N^2}\\sigma^2+\\frac1{N^2}\\sigma^2+\\ldots+\\frac1{N^2}\\sigma^2)\\\\\n&=\\frac{N}{N-1}\\frac{(N-1)^2+N-1}{N^2}\\sigma^2=\\sigma^2.\n\\end{aligned}\n\\]\n\n\n\n\nDefinition 2.4 The following are the unbiased estimators of \\(\\mu\\) and \\(\\sigma^2\\) of \\(X\\).\n\n\\(\\bar{\\mu}=\\dfrac1N\\sum_{i=1}^NX_i\\) is called the sample mean of the samples.\n\\(\\bar{\\sigma}^2=\\dfrac{1}{N-1}\\sum_{i=1}^N(X_i-\\bar{\\mu})^2\\) is called the sample variance of the samples.\n\n\n\n\n\n\n\n\nCaution\n\n\n\nPlease pay attention to the denominator of the sample variance. The \\(N-1\\) is due to the degree of freedom: all \\(X_i\\)’s and \\(\\bar{\\mu}\\) are not independent to each other.\n\n\n\n\n2.1.2 Confidence intervals\n\nDefinition 2.5 (Confidence interval) Consider a sample of \\(X\\). Fix a number \\(0&lt;\\alpha&lt;1\\). Let \\(L\\) and \\(U\\) be two statistics. We say the interval \\((L,U)\\) is a \\((1-\\alpha)100\\%\\) confidence interval for \\(\\theta\\) if\n\\[\n1-\\alpha=\\Pr[\\theta\\in(L,U)].\n\\]\n\n\n\n\n\n[1] Hogg, R. V., McKean, J. W. and Craig, A. T. (2019). Introduction to mathematical statistics. Pearson.",
+    "crumbs": [
+      "Random variables",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Inferences</span>"
+    ]
+  },
+  {
+    "objectID": "contents/0/prob.html#notations",
+    "href": "contents/0/prob.html#notations",
+    "title": "1  Probability theory",
+    "section": "1.1 Notations",
+    "text": "1.1 Notations\n\n\\(Y\\): a random variable (captial letters)\n\\(y\\): a sample of \\(Y\\)\n\\(\\Pr\\qty(Y\\in A\\mid\\theta)\\): the probability of \\(Y\\) being in \\(A\\)\n\\(p(y\\mid\\theta)=\\Pr\\qty(Y=y\\mid\\theta)\\): the discrete probability density function\n\\(f(y\\mid\\theta)=\\displaystyle\\dv{y}\\Pr\\qty(Y\\leq y\\mid\\theta)\\): the continuous probability density function\n\\(\\Exp\\qty(Y)\\): the expectation of \\(Y\\)\n\\(\\Var\\qty(Y)\\): the variance of \\(Y\\)",
+    "crumbs": [
+      "Random variables",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Probability theory</span>"
+    ]
+  },
+  {
+    "objectID": "contents/0/prob.html#random-variables",
+    "href": "contents/0/prob.html#random-variables",
+    "title": "1  Probability theory",
+    "section": "1.2 Random variables",
+    "text": "1.2 Random variables\n\nDefinition 1.1 (Expectation) \\[\n\\Exp\\mqty[u(X)] = \\int_{-\\infty}^{\\infty}u(x)f(x)\\dl3x.\n\\]\n\n\nDefinition 1.2  \n\n\\(\\mu=\\Exp(X)\\) is called the mean value of \\(X\\).\n\\(\\sigma^2=\\Var(X)=\\Exp\\mqty[(X-\\mu)^2]\\) is called the variance of \\(X\\).\n\\(M_X(t)=\\Exp\\mqty[\\me^{tX}]\\) is called the moment generating function of \\(X\\).\n\n\n\nProposition 1.1  \n\n\\(\\Exp\\mqty[ag(X)+bh(X)]=a\\Exp\\mqty[g(X)]+b\\Exp\\mqty[h(X)]\\).\n\\(\\Var\\mqty[X]=\\Exp\\mqty[(X-\\mu)^2]=\\Exp(X^2)-\\mu^2\\).\n\n\n\nProof. \\[\n\\begin{split}\n\\Exp\\mqty[ag(X)+bh(X)]&=\\int_{-\\infty}^{\\infty}\\mqty[ag(x)+bh(x)]f(x)\\dl3x\\\\\n                 &=a\\int_{-\\infty}^{\\infty}g(x)f(x)\\dl3x+b\\int_{-\\infty}^{\\infty}h(x)f(x)\\dl3x\\\\\n                 &=a\\Exp\\mqty[g(X)]+b\\Exp\\mqty[h(X)].\n\\end{split}\n\\]\n\\[\n\\begin{split}\n\\Exp\\mqty[(X-\\mu)^2]&=\\Exp\\mqty[\\qty(X^2-2\\mu X+\\mu^2)]=\\Exp(X^2)-2\\mu\\Exp(X)+\\Exp(\\mu^2)\\\\\n&=\\Exp(X^2)-2\\mu\\mu+\\mu^2=\\Exp(X^2)-\\mu^2.\n\\end{split}\n\\]",
+    "crumbs": [
+      "Random variables",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Probability theory</span>"
+    ]
+  },
+  {
+    "objectID": "contents/0/prob.html#random-vectors",
+    "href": "contents/0/prob.html#random-vectors",
+    "title": "1  Probability theory",
+    "section": "1.3 Random vectors",
+    "text": "1.3 Random vectors\n\nDefinition 1.3 (Random vector) Given a random experiment with a sample space \\(\\mathcal C\\), consider two random variables \\(X_1\\) and \\(X_2\\), which assign to each element \\(c\\) of \\(\\mathcal C\\) one and only one ordered pair of numbers \\(X_1(c)=x_1\\), \\(X_2(c)=x_2\\). Then we say that \\((X_1, X_2)\\) is a random vector. The space of \\((X_1, X_2)\\) is the set of orderd pairs \\(\\mathcal D=\\set{(x_1, x_2)\\mid x_1=X_1(c), x_2=X_2(c), c\\in\\mathcal C}\\).\n\n\nDefinition 1.4 (Joint Cumulative Distribution Function) The joint cumulative distribution function of \\((X_1, X_2)\\) is defined as follows.\n\n\\[\nF_{X_1,X_2}(x_1,x_2)=\\int_{-\\infty}^{x_1}\\int_{-\\infty}^{x_2}f_{X_1,X_2}(w_1,w_2)\\dl3w_1\\dl3w_2.\n\\]\n\n\n\nDefinition 1.5 (Joint probability density function (pdf)) In continuous random vector case, the pdf is defined as\n\\[\nf_{X_1, X_2}(x_1, x_2)=\\frac{\\partial^2F_{X_1, X_2}(x_1,x_2)}{\\partial x_1\\partial x_2}.\n\\]\n\n\nDefinition 1.6 (Marginal pdf) Assume \\((X_1, X_2)\\) be a continuous random vector. The marginal pdf is \\[\nf_{X_1}(x_1)=\\int_{-\\infty}^{\\infty}f(x_1, x_2)\\dl3x_2.\n\\]\n\n\nDefinition 1.7 (Expectation) Assume that \\(Y=g(X_1, X_2)\\). Then \\[\n\\Exp(Y)=\\int_{-\\infty}^{\\infty}\\int_{-\\infty}^{\\infty} g(x_1, x_2) f_{X_1, X_2}(x_1,x_2)\\dl3x_1\\dl3x_2.\n\\]\n\n\nDefinition 1.8 (Conditional probability) The conditional pdf is defined as follows: \\[\nf_{X_1\\mid X_2}(x_1\\mid x_2)=\\frac{f_{X_1,X_2}(x_1,x_2)}{f_{X_1}(x_1)}=\\frac{f_{X_1,X_2}(x_1,x_2)}{\\int_{-\\infty}^{\\infty} f_{X_1,X_2}(x_1,w)\\dl3w},\n\\] and the corresponding conditional probability is defined as \\[\n\\Pr(X_1\\in A\\mid X_2=x_2)=\\int_Af_{X_1\\mid X_2}(x_1\\mid x_2)\\dl3x_1.\n\\] Thus \\(f_{X_1\\mid X_2}(x_1\\mid x_2)\\) is a pdf of a random function of \\(X_1\\).\n\n\nTheorem 1.1 Let \\((X_1, X_2)\\) be a random vector such that \\(\\Var(X_2)\\) is finite. \\(\\Exp(X_2\\mid X_1=x_1)\\) and \\(\\Var(X_2\\mid X_1=x_1)\\) can be seen as random functions of \\(X_1\\). Then\n\n\\(\\Exp\\mqty[\\Exp(X_2\\mid X_1)]=\\Exp(X_2)\\).\n\\(\\Var\\mqty[\\Var(X_2\\mid X_1)]\\leq\\Var(X_2)\\).\n\n\n\n1.3.1 Relations to single variable case\nUnder the assumption of two variables \\(X\\) and \\(Y\\), when only talking about one variable \\(X\\) (resp. \\(Y\\)), we are actually talking about the random variable corresponding to the marginal pdf. The ignoring the other variable part is handled by the integration part.\n\nProposition 1.2  \n\n\\(\\Exp_X\\mqty[u(X)]=\\Exp\\mqty[u(X)]\\).\n\\(\\Var_X(X)=\\Var(X)\\).\n\n\n\nProof. \\[\n\\begin{aligned}\n\\Exp\\mqty[u(X)]&=\\iint u(x)f(x,y)\\dl3x\\dl3y=\\int u(x) \\mqty[\\displaystyle\\int f(x,y)\\dl3y]\\dl3x=\\int u(x)f_X(x)\\dl3x=\\Exp_X\\mqty[u(X)],\\\\\n\\Var(X)&=\\Exp\\mqty[(X-\\mu)^2]=\\Exp(X^2)-\\mu^2=\\Exp_X(X^2)-\\mu^2=\\Var_X(X).\n\\end{aligned}\n\\]",
+    "crumbs": [
+      "Random variables",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Probability theory</span>"
+    ]
+  },
+  {
+    "objectID": "contents/0/prob.html#maximal-likelihood-estimation",
+    "href": "contents/0/prob.html#maximal-likelihood-estimation",
+    "title": "1  Probability theory",
+    "section": "1.4 Maximal likelihood estimation",
+    "text": "1.4 Maximal likelihood estimation\nConsider the Bayes’ Theorem\n\\[\n    p(\\vb w\\mid \\mathcal D)=\\frac{p(\\mathcal D\\mid \\vb w)p(\\vb w)}{p(\\mathcal D)}.\n\\]\n\\(p(\\mathcal D\\mid \\vb w)\\) is called the likelihood function, \\(p(\\vb w)\\) is called the prior probability and \\(p(\\vb w\\mid \\mathcal D)\\) is called the posterior probability. A widely used frequentist estimator is maximum likelihood, in which \\(\\vb w\\) is set to the value that maximizes the likelihood function \\(p(\\mathcal D\\mid \\vb w)\\). Sometimes the likelihood function is changed to be the error function \\(-\\ln p\\) and to maximize the likelihood function is the same as to minimize the error function.\nConsider a data set of observations \\(\\vb x=(x_1,x_2,\\ldots,x_N)^T\\). These data are i.i.d., with respect to the Gaussian distribution \\(\\mathcal N(\\mu,\\sigma^2)\\). Then we have the likelihood function if it is treated as a function of \\(\\mu\\) and \\(\\sigma^2\\):\n\\[\n    p(\\vb x\\mid \\mu,\\sigma^2)=\\prod_{n=1}^N\\mathcal N(x_n\\mid \\mu,\\sigma^2).\n\\] We want to find \\(\\mu\\) and \\(\\sigma^2\\) to maximize the likelihood function. To do so, we would like to consider the error function\n\\[\n\\begin{split}\n    -\\ln p(\\vb x\\mid \\mu,\\sigma^2)&=-\\ln \\prod_{n=1}^N\\frac{1}{\\sqrt{2\\pi\\sigma^2}}\\exp{-\\frac{1}{2\\sigma^2}(x_n-\\mu)^2}=\\sum_{n=1}^N\\qty(\\frac12\\ln(2\\pi\\sigma^2)+\\frac{1}{2\\sigma^2}(x_n-\\mu)^2)\\\\\n    &=\\frac{1}{2\\sigma^2}\\sum_{n=1}^N(x_n-\\mu)^2+\\frac{N}{2}\\ln(\\sigma^2)+\\frac{N}{2}\\ln(2\\pi).\n\\end{split}\n\\]\nTake the derivative of it. We have\n\\[\n   \\begin{split}\n       \\pdv{ \\qty(-\\ln p(\\vb x\\mid \\mu,\\sigma^2))}{\\mu}&=\\frac{1}{2\\sigma^2}\\sum_{n=1}^N2(x_n-\\mu)(-1)=-\\frac{1}{\\sigma^2}\\qty(N\\mu-\\sum_{n=1}^Nx_n),\\\\\n             \\pdv{ \\qty(-\\ln p(\\vb x\\mid \\mu,\\sigma^2))}{\\sigma^2}&=\\frac12(-1)(\\sigma^2)^{-2}\\qty(\\sum_{n=1}^N(x_n-\\mu)^2)+\\frac{N}{2}\\frac{1}{\\sigma^2}\\\\\n             &=-\\frac N{2(\\sigma^2)^2}\\qty(\\frac1N\\sum_{n-1}^N(x_n-\\mu)^2-\\sigma^2).\n   \\end{split}\n\\] To minimize the error function we need to let them be \\(0\\). Then we have\n\\[\n    \\mu_{ML}=\\sum_{n=1}^Nx_n,\\quad \\sigma^2_{ML}=\\frac1N\\sum_{n=1}^N(x_n-\\mu_{ML})^2.\n\\] \nCompute \\(\\Exp\\mqty[\\mu_{ML}]\\) and \\(\\Exp\\mqty[\\sigma^2_{ML}]\\).\n\\[\n    \\Exp\\mqty[\\mu_{ML}]=\\Exp\\mqty[\\frac1N\\sum_{n=1}^Nx_n]=\\frac1N\\sum_{n=1}^N\\Exp\\mqty[x_n]=\\frac1NN\\mu=\\mu.\n\\] Since \\(\\Var\\mqty[kx]=\\Exp\\mqty[(kx)^2]-(\\Exp\\mqty[kx])^2=k^2\\Exp\\mqty[x^2]-k^2\\Exp\\mqty[x]^2=k^2\\Var\\mqty[x]\\), we have\n\\[\n\\begin{aligned}\n    \\Var\\mqty[\\mu_{ML}]&=\\Var\\mqty[\\frac1N\\sum_{n=1}^Nx_n]=\\frac1{N^2}\\Var\\mqty[\\sum_{n=1}^Nx_n]=\\frac{1}{N^2}\\sum_{n=1}^N\\Var\\mqty[x_n]\\\\\n    &=\\frac{1}{N^2}(N\\sigma^2)=\\frac{1}{N}\\sigma^2,\\\\\n    \\Var\\mqty[x_n-\\mu_{ML}]&=\\Var\\mqty[\\frac{N-1}{N}x_n-\\frac1Nx_1-\\ldots-\\frac1Nx_N]\\\\\n    &=\\frac{(N-1)^2}{N^2}\\sigma^2+\\frac{1}{N^2}\\sigma^2+\\ldots+\\frac1{N^2}\\sigma^2\\\\\n    &=\\frac{N-1}{N}\\sigma^2.\n\\end{aligned}\n\\] Then\n\\[\n\\begin{split}\n    \\Exp\\mqty[\\sigma^2_{ML}]&=\\Exp\\mqty[\\frac1N\\sum_{n=1}^N(x_n-\\mu_{ML})^2]=\\frac1N\\sum_{n=1}^N\\Exp\\mqty[(x_n-\\mu_{ML})^2]\\\\\n    &=\\frac1N\\sum_{n=1}^N\\qty(\\Var\\mqty[x_n-\\mu_{ML}]+(\\Exp\\mqty[x_n-\\mu_{ML}])^2)=\\frac{N-1}{N}\\sigma^2.\n\\end{split}\n\\]\nTherefore \\(\\sigma^2_{ML}\\) is biased, and the unbiased variance estimation is\n\\[\n    \\tilde{\\sigma}^2=\\frac{1}{N-1}\\sum_{n=1}^N(x_n-\\mu_{ML})^2.\n\\]",
+    "crumbs": [
+      "Random variables",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Probability theory</span>"
+    ]
+  },
+  {
+    "objectID": "contents/0/prob.html#section",
+    "href": "contents/0/prob.html#section",
+    "title": "1  Probability theory",
+    "section": "1.5 ",
+    "text": "1.5 \n\nTheorem 1.2 \\[\nf_{X\\mid Y=y}(x)=\\frac{f_{Y\\mid X=x}(y\\mid x)f_X(x)}{f_Y(y)}\n\\]\n\n\n\n\n\n\n\nNote\n\n\n\n\\(f_{X\\mid Y}(x\\mid y)\\) is a pdf w.r.t \\(X\\), not a pdf w.r.t \\(Y\\).\n\n\n\n# Heading 1\n\n## Heading 2",
+    "crumbs": [
+      "Random variables",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Probability theory</span>"
+    ]
+  },
+  {
+    "objectID": "contents/1/notations.html#notations",
+    "href": "contents/1/notations.html#notations",
+    "title": "Distributions",
+    "section": "Notations",
+    "text": "Notations\n\n\\(Y\\): a random variable\n\\(\\pr\\rdb{Y\\mid\\theta}\\): the probability of \\(Y\\)\n\\(p(y\\mid\\theta)=\\pr\\rdb{Y=y\\mid\\theta}\\): the discrete probability density function\n\\(f(y\\mid\\theta)=\\dfrac{\\dl1}{\\dl1y}\\pr\\rdb{Y\\leq y\\mid\\theta}\\): the continuous probability density function\n\\(\\Exp\\rdb{Y}\\): the expectation of \\(Y\\)\n\\(\\Var\\rdb{Y}\\): the variance of \\(Y\\)",
+    "crumbs": [
+      "Distributions"
+    ]
+  },
+  {
+    "objectID": "contents/1/notations.html#distributions",
+    "href": "contents/1/notations.html#distributions",
+    "title": "Distributions",
+    "section": "Distributions",
+    "text": "Distributions\n\n\\(\\distbinom(n,\\theta)\\): Binomial distribution.\n\\(\\distbeta(\\alpha,\\beta)\\): Beta distribution.\n\\(\\distpois(\\lambda)\\): Poisson distribution.\n\\(\\distgamma(\\lambda)\\): Gamma distribution.\n\\(\\distexp(\\lambda)\\): Exponential distribution.\n\\(\\distnormal(\\mu,\\sigma^2)\\): Nomral distribution.",
+    "crumbs": [
+      "Distributions"
+    ]
+  },
+  {
+    "objectID": "contents/1/notations.html#pdfs",
+    "href": "contents/1/notations.html#pdfs",
+    "title": "Distributions",
+    "section": "pdfs",
+    "text": "pdfs\n\n\\(\\displaystyle \\pdfbinom(y, n, \\theta)=\\dbinom{n}{y} \\theta^{y}(1-\\theta)^{n-y}\\).\n\\(\\displaystyle \\pdfbeta(\\theta, \\alpha, \\beta)=\\dfrac{\\Gamma(\\alpha+\\beta)}{\\Gamma(\\alpha)\\Gamma(\\beta)}\\theta^{\\alpha-1}(1-\\theta)^{\\beta-1}\\).\n\\(\\displaystyle \\pdfpois\\)\n\\(\\displaystyle \\pdfgamma\\)\n\\(\\displaystyle \\pdfexp\\)\n\\(\\displaystyle \\pdfnormal\\)\n\n\n\n\n\n[1] Hoff, P. D. (2009). A first course in bayesian statistical methods. Springer.",
+    "crumbs": [
+      "Distributions"
+    ]
+  },
+  {
+    "objectID": "contents/1/dist/binom.html#expected-values",
+    "href": "contents/1/dist/binom.html#expected-values",
+    "title": "4  Binomial distribution",
+    "section": "4.1 Expected values",
+    "text": "4.1 Expected values\n\nTheorem 4.1 Let \\(Y\\sim\\distbinom(n,\\theta)\\). Then \\[\n\\Exp\\qty[Y]=n\\theta.\n\\]\n\n\nProof. \\[\n\\begin{split}\n    \\Exp\\qty[Y]&=\\sum_{y=0}^n\\dbinom{n}{y}y\\theta^y(1-\\theta)^{n-y}=\\sum_{y=0}^n\\frac{n!}{y!(n-y)!}y\\theta^y(1-\\theta)^{n-y}\\\\\n    &=\\sum_{y=1}^nn\\theta\\frac{(n-1)!}{(y-1)!(n-1-(y-1))!}\\theta^{y-1}(1-\\theta)^{n-y}\\\\\n    &=n\\theta\\sum_{y=0}^{n-1}\\frac{(n-1)!}{y!(n-1-y)!}\\theta^y(1-\\theta)^{n-1-y}\\\\\n    &=n\\theta(\\theta+1-\\theta)^{n-1}=n\\theta.\n\\end{split}\n\\]",
+    "crumbs": [
+      "Distributions",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Binomial distribution</span>"
+    ]
+  },
+  {
+    "objectID": "contents/1/dist/binom.html#variance",
+    "href": "contents/1/dist/binom.html#variance",
+    "title": "4  Binomial distribution",
+    "section": "4.2 Variance",
+    "text": "4.2 Variance\ndd",
+    "crumbs": [
+      "Distributions",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Binomial distribution</span>"
+    ]
+  },
+  {
+    "objectID": "contents/1/dist/beta.html#expected-values",
+    "href": "contents/1/dist/beta.html#expected-values",
+    "title": "5  Beta distribution",
+    "section": "5.1 Expected values",
+    "text": "5.1 Expected values\n\nTheorem 5.1 Let \\(\\theta\\sim\\distbeta(\\alpha,\\beta)\\). Then \\(\\Exp\\qty[\\theta]=\\dfrac{\\alpha}{\\alpha+\\beta}\\).\n\n\nProof. \\[\n\\begin{split}\n    \\Exp\\qty[\\theta]&=\\int_0^1\\theta\\cdot\\pdfbeta(\\alpha,\\beta)\\dl3\\theta=\\int_0^1\\theta\\cdot c\\cdot\\theta^{\\alpha-1}(1-\\theta)^{\\beta-1}\\dl3\\theta\\\\\n    &=\\int_0^1c\\cdot\\theta^{\\alpha}(1-\\theta)^{\\beta-1}\\dl3\\theta=\\frac{\\Gamma(\\alpha+\\beta)}{\\Gamma(\\alpha)\\Gamma(\\beta)}\\frac{\\Gamma(\\alpha+1)\\Gamma(\\beta)}{\\Gamma(\\alpha++\\beta+1)}\\\\\n    &=\\frac{\\Gamma(\\alpha+1)\\Gamma(\\alpha+\\beta)}{\\Gamma(\\alpha)\\Gamma(\\alpha+\\beta+1)}=\\frac{\\alpha}{\\alpha+\\beta}.\n\\end{split}\n\\]",
+    "crumbs": [
+      "Distributions",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Beta distribution</span>"
+    ]
+  },
+  {
+    "objectID": "contents/1/dist/beta.html#binomial-and-beta",
+    "href": "contents/1/dist/beta.html#binomial-and-beta",
+    "title": "5  Beta distribution",
+    "section": "5.2 Binomial and Beta",
+    "text": "5.2 Binomial and Beta\nIf the prior distribution is Beta, and the sampling data is binomial, then the posterior is also Beta.\n\nTheorem 5.2 Let the prior distribution for \\(\\theta\\) be \\[\n\\Pr(\\theta)=\\pdfbeta(\\alpha, \\beta)=c\\,\\theta^{\\alpha-1}(1-\\theta)^{\\beta-1}\n\\] and the sampling data for \\(y\\) be \\[\n\\Pr\\qty(y\\mid\\theta)=\\dbinom{n}{y}\\theta^y(1-\\theta)^{n-y},\n\\] then the posterior distribution is again beta: \\[\n\\Pr\\qty(\\theta\\mid y)=\\pdfbeta(\\alpha+y, \\beta+n-y).\n\\]\n\n\nProof. \\[\n\\begin{split}\n    \\Pr\\qty(\\theta\\mid y)&=\\frac{\\Pr\\qty(y\\mid\\theta)\\Pr\\qty(\\theta)}{\\int_0^1\\Pr\\qty(y\\mid\\theta)\\Pr\\qty(\\theta)\\dl3\\theta}=c\\,\\theta^y(1-\\theta)^{n-y}\\theta^{\\alpha-1}(1-\\theta)^{\\beta-1}\\\\\n    &=c\\,\\theta^{y+\\alpha-1}(1-\\theta)^{n-y+\\beta-1}\\\\\n    &=\\pdfbeta(\\alpha+y,\\beta+n-y).\n\\end{split}\n\\]",
+    "crumbs": [
+      "Distributions",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Beta distribution</span>"
+    ]
+  },
+  {
+    "objectID": "contents/1/dist/poisson.html#relations-between-poisson-distribution-and-binomial-distribution",
+    "href": "contents/1/dist/poisson.html#relations-between-poisson-distribution-and-binomial-distribution",
+    "title": "7  Poisson distribution",
+    "section": "7.1 Relations between Poisson distribution and binomial distribution",
+    "text": "7.1 Relations between Poisson distribution and binomial distribution\nConsider the number of events happen during a fixed length period. This is a Poisson process. Assume that the expectation of the distribution is \\(\\theta\\). This means that we could expect \\(\\theta\\) events happening during the time. The distribution of the process is \\(\\pdfpois(y, \\theta)\\).\nWe may understand the process in terms of binomial distribution. We could split the time period into \\(n\\) pieces. The probability of that the event happens in one piece is \\(p\\). Then this process can be described by a binomial distribution \\(\\pdfbinom(y, n, p)\\). Its expectation value is \\(np\\). Then we have \\(np=\\theta\\). Therefore \\(p=\\theta/n\\).\n\nTheorem 7.3 Poisson distribution is the limit of binomial distribution:\n\\[\n\\lim_{n\\rightarrow\\infty}\\pdfbinom(y,n,\\theta/n)=\\pdfpois(y,\\theta).\n\\]\n\n\n\n\n\n\n\nProof\n\n\n\n\n\n\\[\n\\begin{split}\n\\lim_{n\\rightarrow\\infty}\\pdfbinom(y,n,\\theta/n)&= \\lim_{n\\rightarrow\\infty}\\binom{n}{y}\\qty(\\frac{\\theta}{n})^y\\qty(1-\\frac{\\theta}{n})^{n-y}\\\\\n&=\\lim_{n\\rightarrow\\infty}\\frac{n!}{y!(n-k)!}\\frac{\\theta^y}{n^y}\\qty(1-\\frac{\\theta}{n})^n\\qty(1-\\frac{\\theta}{n})^{-y}\\\\\n&=\\frac{\\theta^y}{y!}\\lim_{n\\rightarrow\\infty}\\mqty[\\frac{n(n-1)(n-2)\\ldots(n-y+1)}{n^y}\\qty(1-\\frac{\\theta}{n})^{-y}]\\lim_{n\\rightarrow\\infty}\\qty(1-\\frac{\\theta}{n})^n\\\\\n&=\\frac{\\theta^y}{y!}\\me^{-\\theta}\\\\\n&=\\pdfpois(y,\\theta).\n\\end{split}\n\\]",
+    "crumbs": [
+      "Distributions",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Poisson distribution</span>"
+    ]
+  },
+  {
+    "objectID": "contents/1/dist/gamma.html",
+    "href": "contents/1/dist/gamma.html",
+    "title": "8  Gamma distribution",
+    "section": "",
+    "text": "\\[\n\\require{physics}\n\\require{braket}\n\\]\n\\[\n\\newcommand{\\dl}[1]{{\\hspace{#1mu}\\mathrm d}}\n\\newcommand{\\me}{{\\mathrm e}}\n\\]\n\n\\[\n\\newcommand{\\Exp}{\\operatorname{E}}\n\\newcommand{\\Var}{\\operatorname{Var}}\n\\newcommand{\\Mode}{\\operatorname{mode}}\n\\]\n\n\\[\n\\newcommand{\\pdfbinom}{{\\tt binom}}\n\\newcommand{\\pdfbeta}{{\\tt beta}}\n\\newcommand{\\pdfpois}{{\\tt poisson}}\n\\newcommand{\\pdfgamma}{{\\tt gamma}}\n\\newcommand{\\pdfnormal}{{\\tt norm}}\n  \\newcommand{\\pdfexp}{{\\tt expon}}\n\\]\n\n\\[\n\\newcommand{\\distbinom}{\\operatorname{B}}\n\\newcommand{\\distbeta}{\\operatorname{Beta}}\n\\newcommand{\\distgamma}{\\operatorname{Gamma}}\n\\newcommand{\\distexp}{\\operatorname{Exp}}\n\\newcommand{\\distpois}{\\operatorname{Poisson}}\n\\newcommand{\\distnormal}{\\operatorname{\\mathcal N}}\n\\]\n\n\nDefinition 8.1 Let \\(\\mathcal Y=\\set{0,1,2,\\ldots}\\). The uncertain quantity \\(Y\\in\\mathcal Y\\) has a (denoted by \\(Y\\sim\\distgamma(a,b)\\) or \\(Y\\sim\\Gamma(a,b)\\)) if \\[\n\\Pr\\qty(Y=\\theta\\mid a,b)=\\pdfgamma(\\theta,a, b)=\\dfrac{b^a}{\\Gamma(a)}\\theta^{a-1}\\me^{-b\\theta},\\quad \\text{for }\\theta,a,b&gt;0.\n\\]\nHere\n\n\\(a\\) is the shape.\n\\(b\\) is the rate, which also represents effective sample size.\n\\(\\lambda=\\frac1b\\) is the scale.\n\n\n\n\n\n\n\n\nPython code\n\n\n\n\nfrom scipy.stats import gamma\nimport matplotlib.pyplot as plt\nimport numpy as np\n\nrv = gamma(a=20, scale=1/2)\n\nplt.plot(rv.pdf(np.arange(100)))\n\n\n\n\n\n\n\n\n\nrv.interval(.95)\n\n(6.108259792701973, 14.835426785792794)\n\n\n\n\n\nTheorem 8.1 If \\(Y\\sim \\distgamma(a, b)\\), then\n\n\\(\\Exp\\qty[Y\\mid a, b]=a/b\\),\n\\(\\Var\\qty[Y\\mid a, b]=a/b^2\\),\n\\(\\Mode\\qty[Y\\mid  a, b]=\\)\n\n\n\n\n\n\n\n\nProof\n\n\n\n\\[\n\\begin{split}\n\\Exp\\qty[Y\\mid a,b]&= \\int_{0}^{\\infty}\\theta\\frac{b^a}{\\Gamma(a)}\\theta^{a-1}\\me^{-b\\theta}\\dl3\\theta\\\\\n&=\\int_{0}^{\\infty}\\frac{b^a}{\\Gamma(a)}\\theta^{(a+1)-1}\\me^{-b\\theta}\\dl3\\theta\\\\\n&=\\int_{0}^{\\infty}\\frac{\\Gamma(a+1)}{b\\Gamma(a)}\\frac{b^{a+1}}{\\Gamma(a+1)}\\theta^{(a+1)-1}\\me^{-b\\theta}\\dl3\\theta\\\\\n&=\\frac{\\Gamma(a+1)}{b\\Gamma(a)}\\int_{0}^{\\infty}\\pdfgamma(\\theta,a+1,b)\\dl3\\theta\\\\\n&=\\frac{a}{b},\\\\\n\\Exp\\qty[Y^2\\mid a,b]&= \\int_{0}^{\\infty}\\theta^2\\frac{b^a}{\\Gamma(a)}\\theta^{a-1}\\me^{-b\\theta}\\dl3\\theta\\\\\n&=\\int_{0}^{\\infty}\\frac{b^a}{\\Gamma(a)}\\theta^{(a+2)-1}\\me^{-b\\theta}\\dl3\\theta\\\\\n&=\\int_{0}^{\\infty}\\frac{\\Gamma(a+2)}{b^2\\Gamma(a)}\\frac{b^{a+2}}{\\Gamma(a+2)}\\theta^{(a+2)-1}\\me^{-b\\theta}\\dl3\\theta\\\\\n&=\\frac{\\Gamma(a+2)}{b^2\\Gamma(a)}\\int_{0}^{\\infty}\\pdfgamma(\\theta,a+2,b)\\dl3\\theta\\\\\n&=\\frac{a(a+1)}{b^2},\\\\\n\\Var\\qty[Y\\mid a, b]&=\\Exp\\qty[Y^2\\mid a, b]-\\qty(\\Exp\\qty[Y\\mid a, b])^2\\\\\n&=\\frac{a(a+1)}{b^2}-\\frac{a^2}{b^2}=\\frac{a}{b^2}.\n\\end{split}\n\\]\n\n\n\n\n\n\n\n\nVague prior\n\n\n\nAssume \\(\\epsilon&gt;0\\), then \\(\\distgamma(\\epsilon, \\epsilon)\\) represents a distribution without knowledge. Its mean is \\(1\\) and variance is \\(1/\\epsilon\\) which is very large.\nWith Poisson likelihood, the posterior mean is \\(\\dfrac{\\epsilon+\\sum y_i}{\\epsilon+n}\\approx \\dfrac{\\sum y_i}{n}\\) .",
+    "crumbs": [
+      "Distributions",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Gamma distribution</span>"
+    ]
+  },
+  {
+    "objectID": "contents/1/dist/normal.html",
+    "href": "contents/1/dist/normal.html",
+    "title": "9  Normal distribution",
+    "section": "",
+    "text": "\\[\n\\require{physics}\n\\require{braket}\n\\]\n\\[\n\\newcommand{\\dl}[1]{{\\hspace{#1mu}\\mathrm d}}\n\\newcommand{\\me}{{\\mathrm e}}\n\\]\n\n\\[\n\\newcommand{\\Exp}{\\operatorname{E}}\n\\newcommand{\\Var}{\\operatorname{Var}}\n\\newcommand{\\Mode}{\\operatorname{mode}}\n\\]\n\n\\[\n\\newcommand{\\pdfbinom}{{\\tt binom}}\n\\newcommand{\\pdfbeta}{{\\tt beta}}\n\\newcommand{\\pdfpois}{{\\tt poisson}}\n\\newcommand{\\pdfgamma}{{\\tt gamma}}\n\\newcommand{\\pdfnormal}{{\\tt norm}}\n  \\newcommand{\\pdfexp}{{\\tt expon}}\n\\]\n\n\\[\n\\newcommand{\\distbinom}{\\operatorname{B}}\n\\newcommand{\\distbeta}{\\operatorname{Beta}}\n\\newcommand{\\distgamma}{\\operatorname{Gamma}}\n\\newcommand{\\distexp}{\\operatorname{Exp}}\n\\newcommand{\\distpois}{\\operatorname{Poisson}}\n\\newcommand{\\distnormal}{\\operatorname{\\mathcal N}}\n\\]\n\n\\[\n\\distnormal(x; \\mu, \\sigma^2)\n\\]\n\n\\(X_i\\sim \\distnormal(\\mu, \\sigma_0^2)\\)\n\\(\\mu\\sim\\distnormal(m_0,s_0^2)\\)\n\nposterior mean: \\[\n\\frac{n}{n+\\frac{\\sigma_0^2}{s_0^2}}\\overline{X}+\\frac{\\frac{\\sigma_0^2}{s_0^2}}{n+\\frac{\\sigma_0^2}{s_0^2}}m.\n\\]",
+    "crumbs": [
+      "Distributions",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Normal distribution</span>"
+    ]
+  },
+  {
+    "objectID": "contents/2/bayes.html#try",
+    "href": "contents/2/bayes.html#try",
+    "title": "Bayesian Statistics",
+    "section": "try",
+    "text": "try\ndsfa\n\nsdfasdf\nasdfas",
+    "crumbs": [
+      "Bayesian Statistics"
+    ]
+  },
+  {
+    "objectID": "contents/2/bayesthm.html#conditional-continuous-distributions",
+    "href": "contents/2/bayesthm.html#conditional-continuous-distributions",
+    "title": "10  Bayes’ Theorem",
+    "section": "10.1 Conditional continuous distributions",
+    "text": "10.1 Conditional continuous distributions\n\nDefinition 10.1 (Marginal probability density function) Given two continous random variables \\(X\\) and \\(Y\\) whose joint distribution is known, then the marginal probability density function is the integration of the joint probability distribution over \\(Y\\) and vice versa. That is \\[\nf_X(x)=\\int_c^df(x,y)\\dl3y,\\quad f_Y(y)=\\int_a^bf(x,y)\\dl3x.\n\\]\n\n\nDefinition 10.2 (Conditional Continous Distributions) Let \\(X\\) and \\(Y\\) be two random variables. The conditional probability density function of \\(Y\\) given the occurrence of the value \\(x\\) of \\(X\\) is written as \\[\nf_{Y\\mid X}(y\\mid x)=\\frac{f_{X,Y}(x,y)}{f_X(x)}\n\\] where \\(f_{X,Y}(x,y)\\) gives the joint density of \\(X\\) and \\(Y\\) while \\(f_X(x)\\) gives the marginal density of \\(X\\).",
+    "crumbs": [
+      "Bayesian Statistics",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Bayes' Theorem</span>"
+    ]
+  },
+  {
+    "objectID": "contents/references.html",
+    "href": "contents/references.html",
+    "title": "References",
+    "section": "",
+    "text": "[1] Hoff, P. D.\n(2009). A first course in bayesian statistical methods.\nSpringer.\n\n\n[2] Hogg, R. V.,\nMcKean, J. W. and Craig, A. T. (2019). Introduction to\nmathematical statistics. Pearson.",
+    "crumbs": [
+      "References"
+    ]
+  },
+  {
+    "objectID": "contents/app/specialfunctions.html#gamma-functions",
+    "href": "contents/app/specialfunctions.html#gamma-functions",
+    "title": "Appendix A: Special functions",
+    "section": "A.1 Gamma functions",
+    "text": "A.1 Gamma functions\n\nDefinition A.1 (Gamma function) Let \\(z\\) be any complex number that \\(\\mathfrak R(z)&gt;0\\). Then \\[\n\\Gamma(z)=\\int_0^{\\infty}t^{z-1}\\me^{-t}\\dl3t.\n\\tag{A.1}\\]\n\n\nTheorem A.1 \\[\n\\Gamma(z+1)=z\\Gamma(z).\n\\tag{A.2}\\]\n\n\nProof. \\[\n\\begin{split}\n    \\Gamma(z+1)&=\\int_0^{\\infty}t^{z+1-1}\\me^{-t}\\dl3t=-\\int_0^{\\infty}t^{z+1-1}\\dl3\\me^{-t}\\\\\n    &=-t\\me^{-t}\\biggr\\rvert_0^{\\infty}+\\int_0^{\\infty}\\me^{-t}\\dl3t^{z}=\\int_0^{\\infty}zt^{z-1}\\me^{-t}\\dl3t=z\\Gamma(z).\n\\end{split}\n\\]",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Special functions</span>"
+    ]
+  },
+  {
+    "objectID": "contents/app/specialfunctions.html#beta-functions",
+    "href": "contents/app/specialfunctions.html#beta-functions",
+    "title": "Appendix A: Special functions",
+    "section": "A.2 Beta functions",
+    "text": "A.2 Beta functions\n\nDefinition A.2 (Beta function) Let \\(z_1\\), \\(z_2\\) be two complex numbers that \\(\\mathfrak R(z_1),\\mathfrak R(z_2)&gt;0\\). Then \\[\nB(z_1,z_2)=\\int_0^1t^{z_1-1}(1-t)^{z_2-1}\\dl3t.\n\\tag{A.3}\\]\n\n\nTheorem A.2 (Relations between Beta functions and Gamma functions) \\[\n\\Gamma(\\alpha)\\Gamma(\\beta)=\\Gamma(\\alpha+\\beta)B(\\alpha, \\beta).\n\\tag{A.4}\\]\n\n\nProof. Use the following trick to change a product of two integrals into a double integral. \\[\n\\begin{align}\n\\Gamma(\\alpha)\\Gamma(\\beta)&=\\int_0^{\\infty}u^{\\alpha-1}\\me^{-u}\\dl3u\\int_0^{\\infty}v^{\\beta-1}\\me^{-v}\\dl3v\\\\\n&=\\int_0^{\\infty}\\int_0^{\\infty}u^{\\alpha-1}v^{\\beta-1}\\me^{-u-v}\\dl3u\\dl3v.\n\\end{align}\n\\]\nSet \\(u=st\\), \\(v=s-st\\). Then \\(s=u+v\\), \\(t=\\dfrac{u}{u+v}\\), and \\(\\abs{\\dfrac{\\partial(u,v)}{\\partial(s,t)}}=\\abs{\\mqty[t&s\\\\1-t&-s]}=s\\). Then \\[\\begin{split}\n    \\Gamma(\\alpha)\\Gamma(\\beta)&=\\int_0^{\\infty}\\int_0^{\\infty}u^{\\alpha-1}v^{\\beta-1}\\me^{-u-v}\\dl3u\\dl3v\\\\\n    &=\\int_{v=0}^{v=\\infty}\\int_{u=0}^{u=\\infty}(st)^{\\alpha-1}(s(1-t))^{\\beta-1}\\me^{-s}s\\dl3s\\dl3t\\\\\n    &=\\int_{t=0}^{t=1}\\int_{s=0}^{s=\\infty}s^{\\alpha+\\beta-1}t^{\\alpha-1}(1-t)^{\\beta-1}\\me^{-s}\\dl3s\\dl3t\\\\\n    &=\\int_{0}^{\\infty}s^{\\alpha+\\beta-1}\\me^{-s}\\dl3s\\int_{0}^{1}t^{\\alpha-1}(1-t)^{\\beta-1}\\dl3t\\\\\n    &=\\Gamma(\\alpha+\\beta)B(\\alpha,\\beta).\n\\end{split}\\]",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Special functions</span>"
+    ]
+  }
+]

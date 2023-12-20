@@ -1,0 +1,70 @@
+project:
+  type: book
+  output-dir: docs
+
+toc: true
+number-sections: true
+toc-depth: 2
+number-depth: 4
+bibliography: book.bib
+csl: ims.csl
+
+format:
+  html:
+    theme: cosmo
+    page-layout: article
+    # include-before-body: contents/math.qmd
+crossref:
+  appendix-title: "Appendix "
+  appendix-delim: ":"
+book:
+  title: "Stats"
+  subtitle: "Notes"
+  description: "Homepage Spring 2024."
+  author: "Xinli Xiao"
+  date: last-modified
+  chapters: 
+    - index.qmd
+    - part: contents/0/rv.qmd
+      chapters:
+          - contents/0/prob.qmd 
+          - contents/0/inferences.qmd
+          - contents/0/rv1.qmd
+    - part: contents/1/notations.qmd
+      chapters: 
+        - contents/1/dist/binom.qmd
+        - contents/1/dist/beta.qmd
+        - contents/1/dist/chisquare.qmd
+        - contents/1/dist/poisson.qmd
+        - contents/1/dist/gamma.qmd
+    #     - contents/1/dist/exp.qmd
+        - contents/1/dist/normal.qmd
+    - part: contents/2/bayes.qmd
+      chapters:
+        - contents/2/bayesthm.qmd
+    - contents/references.qmd
+  appendices:
+    - contents/app/specialfunctions.qmd
+  sidebar:
+    # background: "#D9E3E4"
+    border: true
+    search: true
+    collapse-level: 1
+    pinned: true
+    # style: docked
+    align: center
+    tools:
+      - icon: github
+        text: Source Code
+        href: https://github.com/xiaoxl/stats
+  # navbar:
+  #   subtitle: "2022 Fall"
+  #   pinned: false
+  page-navigation: true
+
+
+
+
+
+
+
