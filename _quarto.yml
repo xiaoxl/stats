@@ -11,9 +11,10 @@ csl: ims.csl
 
 format:
   html:
-    theme: cosmo
-    page-layout: article
-    # include-before-body: contents/math.qmd
+    theme: united 
+    # page-layout: article
+    # include-before-body: 
+    # - file: contents/math.qmd
 crossref:
   appendix-title: "Appendix "
   appendix-delim: ":"
@@ -29,7 +30,7 @@ book:
       chapters:
           - contents/0/prob.qmd 
           - contents/0/inferences.qmd
-          - contents/0/rv1.qmd
+          - contents/0/statsmodels.qmd
     - part: contents/1/notations.qmd
       chapters: 
         - contents/1/dist/binom.qmd
@@ -39,10 +40,9 @@ book:
         - contents/1/dist/gamma.qmd
     #     - contents/1/dist/exp.qmd
         - contents/1/dist/normal.qmd
-    - part: contents/2/bayes.qmd
+    - part: "SLR"
       chapters:
-        - contents/2/bayesthm.qmd
-    - contents/references.qmd
+        - contents/2/slr.qmd
   appendices:
     - contents/app/specialfunctions.qmd
   sidebar:
@@ -53,12 +53,12 @@ book:
     pinned: true
     # style: docked
     align: center
-    tools:
-      - icon: github
-        text: Source Code
-        href: https://github.com/xiaoxl/stats
+    # tools:
+    #   - icon: github
+    #     text: Source Code
+    #     href: https://github.com/xiaoxl/stats
   # navbar:
-  #   subtitle: "2022 Fall"
+  #   subtitle: "2023 Fall"
   #   pinned: false
   page-navigation: true
 

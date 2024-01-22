@@ -1,16 +1,22 @@
 # Inferences
 
 
+{{< include ../math.qmd >}}
+
 
 
 ## General theory
 
 Cited from [@Hog2019, pp. 206, Chapter 4].
 
-### Point estimation
+### Sampling
 
 
-Consider a random variable $X$ with an unknown distribution. Our information about the distribution of $X$ comes from a sample on $X$. The sample ovservations have the same distribution as $X$, and we denote them as the random variables $X_1, X_2,\ldots,X_n$, where $n$ denotes the **sample size**. When the sample is actually drawn, we use $x_1,\ldots,x_n$ as the **realizations** of the sample.
+Consider a random variable $X$ with an unknown distribution. Our information about the distribution of $X$ comes from a sample on $X$: $\qty{X_1,\ldots,X_n}$.
+
+- The sample ovservations $\qty{X_1,\ldots,X_n}$ have the same distribution as $X$.
+- $n$ denotes the **sample size**.
+- When the sample is actually drawn, we use $x_1,\ldots,x_n$ as the **realizations** of the sample.
 
 
 ::: {#def-}
@@ -21,8 +27,10 @@ If the random variables $X_1,\ldots, X_n$ are iid, then these random variable co
 
 ::: {#def-}
 # Statistics
-Let $X_1,\ldots,X_n$ denote a sample on a random variable $X$. Let $T=T(X_1,\ldots,X_n)$ be a function of the sample. $T$ is called a **statistic**. Once the sample is drawn, $t=T(x_1,\ldots,x_n)$ is called the realization of $T$.
+Let $X_1,\ldots,X_n$ denote a sample on a random variable $X$. Let $T=T(X_1,\ldots,X_n)$ be a function of the sample. $T$ is called a **statistic**. Once a sample is drawn, $t=T(x_1,\ldots,x_n)$ is called the realization of $T$.
 :::
+
+### Point estimation
 
 Assume that the distribution of $X$ is known down to an unknown parameter $\theta$ where $\theta$ can be a vector. Then the pdf of $X$ can be written as $f(x;\theta)$. In this case we might find some statistic $T$ to estimate $\theta$. This is called a **point estimator** of $\theta$. A realization $t$ is called an **estimate** of $\theta$.
 
@@ -31,7 +39,6 @@ Assume that the distribution of $X$ is known down to an unknown parameter $\thet
 # Unbiasedness
 Let $X_1,\ldots,X_n$ is a sample on a random varaible $X$ with pdf $f(x;\theta)$. Let $T$ be a statistic. We say that $T$ is an **unbiased** estimator of $\theta$ if $E(T)=\theta$.
 :::
-
 
 
 
@@ -80,6 +87,8 @@ The following are the unbiased estimators of $\mu$ and $\sigma^2$ of $X$.
 ::: {.callout-caution}
 Please pay attention to the denominator of the sample variance. The $N-1$ is due to the degree of freedom: all $X_i$'s and $\bar{\mu}$ are not independent to each other.
 :::
+
+
 
 ### Confidence intervals
 

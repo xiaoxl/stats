@@ -1,0 +1,40 @@
+# stats models
+
+
+{{< include ../math.qmd >}}
+
+
+
+@Men2020
+
+The process of finding the model that relates $y$ to $x$ and best fits the data is called *regression analysis*.
+
+
+
+- The variable $y$ to be modeled is called the **dependent variable** (or **response variable**). Its expected value is denoted $\Exp(y)$.
+
+
+**General Form of probabilistic Model in Regression** is 
+$$
+y=E(y)+\varepsilon
+$$
+
+
+## Estimation
+
+
+a statistic whose sampling distribution has the mean around the proposed value and a small variance. If the means are equal: unbiased estimator. No: biased.
+
+## build a model that fits the data
+
+
+predicted value: $\hat{y}$, $\hat{\beta}$, ...
+
+- model: $y=\Exp(y)+\varepsilon$
+
+
+
+@Jam2023
+
+- want to estimate $f$: $Y=f(X)+\varepsilon$
+- want to use $\hat{f}$ to estimate $f$: $\hat{Y}=\hat{f}(X)$.

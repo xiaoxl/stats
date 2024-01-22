@@ -3,15 +3,17 @@
 Main references: @Hof2009.
 
 
+{{< include ../math.qmd >}}
+
 
 
 ## Notations
 - $Y$: a random variable
-- $\pr\rdb{Y\mid\theta}$: the probability of $Y$
-- $p(y\mid\theta)=\pr\rdb{Y=y\mid\theta}$: the discrete probability density function
-- $f(y\mid\theta)=\dfrac{\dl1}{\dl1y}\pr\rdb{Y\leq y\mid\theta}$: the continuous probability density function
-- $\Exp\rdb{Y}$: the expectation of $Y$
-- $\Var\rdb{Y}$: the variance of $Y$
+- $\Pr(Y\mid\theta)$: the probability of $Y$
+- $p(y\mid\theta)=\Pr(Y=y\mid\theta)$: the discrete probability density function
+- $f(y\mid\theta)=\dfrac{\dl1}{\dl1y}\Pr(Y\leq y\mid\theta)$: the continuous probability density function
+- $\Exp\qty(Y)$: the expectation of $Y$
+- $\Var\qty(Y)$: the variance of $Y$
 
 ## Distributions
 - $\distbinom(n,\theta)$: Binomial distribution.

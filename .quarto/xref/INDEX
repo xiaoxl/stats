@@ -46,5 +46,11 @@
   },
   "contents/app/specialfunctions.qmd": {
     "specialfunctions.html": "54ea4d36"
+  },
+  "contents/2/slr.qmd": {
+    "slr.html": "74b6a0d3"
+  },
+  "contents/0/statsmodels.qmd": {
+    "statsmodels.html": "b3668921"
   }
 }
