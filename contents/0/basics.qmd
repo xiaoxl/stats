@@ -79,26 +79,6 @@ head(df)
 
 
 
-# Python
-
-```{r setup, include=FALSE}
-library(reticulate)
-use_python("C:/Users/Xinli/miniforge3/envs/ds24")
-```
-
-
-
-
-```{python}
-import pandas as pd
-df = pd.read_csv("possum.csv")
-df.head()
-```
-
-
-
-:::
-
 
 
 We first compute the frequency table of the variable `pop`:
@@ -125,6 +105,55 @@ pie(table(df$pop))
 Note that `table` is handling the statistics, while `barplot` and `pie` draw on top of the result from `table`.
 
 
+
+# Python
+
+```{r}
+#| echo: false
+#| output: false
+library(reticulate)
+use_python("C:/Users/Xinli/miniforge3/envs/ds24")
+```
+
+
+
+
+```{python}
+import pandas as pd
+df = pd.read_csv("possum.csv")
+df.head()
+```
+
+
+
+
+We first compute the frequency table of the variable `pop`:
+
+```{python}
+df['pop'].value_counts()
+```
+or relative frequency talbe:
+```{python}
+df['pop'].value_counts(normalize=True)
+```
+
+Then we could draw the barplot of this variable:
+
+```{python}
+import matplotlib.pyplot as plt
+vc = df['pop'].value_counts()
+plt.bar(vc.index, vc)
+```
+
+and the pie plot:
+```{python}
+_ = plt.pie(vc)
+```
+
+Note that `table` is handling the statistics, while `barplot` and `pie` draw on top of the result from `table`.
+
+
+:::
 
 :::
 
