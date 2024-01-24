@@ -12,12 +12,14 @@ csl: ims.csl
 execute:
   freeze: auto
 
+
+jupyter: ds24
+
 knitr:
   opts_chunk:
     comment: "#>"
     collapse: true
 
-jupyter: ds24
 
 
 format:

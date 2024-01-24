@@ -52,9 +52,20 @@ To display it, we could use table, bar chart or pie chart.
 
 
 ::: {.callout-tip collapse="true"}
+
+
+
+
 # Example: Possums
 
 All the example about possums below come from the dataset [here](./assests/data/possum.csv).
+
+
+
+::: {.panel-tabset}
+
+
+# R
 
 ```{r}
 #| echo: false
@@ -65,6 +76,28 @@ knitr::opts_knit$set(root.dir = 'assests/data/')
 df <- read.csv('possum.csv')
 head(df)
 ```
+
+
+
+# Python
+
+```{r setup, include=FALSE}
+library(reticulate)
+use_python("C:/Users/Xinli/miniforge3/envs/ds24")
+```
+
+
+
+
+```{python}
+import pandas as pd
+df = pd.read_csv("possum.csv")
+df.head()
+```
+
+
+
+:::
 
 
 
