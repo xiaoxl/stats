@@ -50,7 +50,7 @@ div.csl-indent {
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
 <link href="../../contents/1/dist/binom.html" rel="next">
-<link href="../../contents/0/rv1.html" rel="prev">
+<link href="../../contents/0/statsmodels.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -145,9 +145,6 @@ window.Quarto = {
     <div class="pt-lg-2 mt-2 text-center sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../../">Stats</a> 
-        <div class="sidebar-tools-main">
-    <a href="https://github.com/xiaoxl/stats" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
-</div>
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -180,14 +177,20 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../contents/0/inferences.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Inferences</span></span></a>
+  <a href="../../contents/0/basics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Basics</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../contents/0/rv1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">dis</span></span></a>
+  <a href="../../contents/0/inferences.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Inferences</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../contents/0/statsmodels.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">stats models</span></span></a>
   </div>
 </li>
       </ul>
@@ -204,45 +207,45 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../contents/1/dist/binom.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Binomial distribution</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Binomial distribution</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../contents/1/dist/beta.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Beta distribution</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Beta distribution</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../contents/1/dist/chisquare.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Chi-square distribution</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Chi-square distribution</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../contents/1/dist/poisson.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Poisson distribution</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Poisson distribution</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../contents/1/dist/gamma.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Gamma distribution</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Gamma distribution</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../contents/1/dist/normal.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Normal distribution</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Normal distribution</span></span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../contents/2/bayes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Bayesian Statistics</span></a>
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
+ <span class="menu-text">SLR</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -250,18 +253,12 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../contents/2/bayesthm.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Bayes' Theorem</span></span></a>
+  <a href="../../contents/2/slr.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">slr</span></span></a>
   </div>
 </li>
       </ul>
   </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../contents/references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">References</span></a>
-  </div>
-</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
@@ -317,16 +314,51 @@ window.Quarto = {
 </header>
 
 
-<p>Main references: <span class="citation" data-cites="Hof2009">[<a href="../references.html#ref-Hof2009" role="doc-biblioref">1</a>]</span>.</p>
+<p>Main references: <span class="citation" data-cites="Hof2009">[<a href="../../index.html#ref-Hof2009" role="doc-biblioref">1</a>]</span>.</p>
+<div class="hidden">
+<!-- Constants and basic symbols -->
+<p><span class="math display">\[
+\require{physics}
+\require{braket}
+\]</span></p>
+<p><span class="math display">\[
+\newcommand{\dl}[1]{{\hspace{#1mu}\mathrm d}}
+\newcommand{\me}{{\mathrm e}}
+\]</span></p>
+<!-- Probability -->
+<p><span class="math display">\[
+\newcommand{\Exp}{\operatorname{E}}
+\newcommand{\Var}{\operatorname{Var}}
+\newcommand{\Mode}{\operatorname{mode}}
+\]</span></p>
+<!-- Distributions pdf -->
+<p><span class="math display">\[
+\newcommand{\pdfbinom}{{\tt binom}}
+\newcommand{\pdfbeta}{{\tt beta}}
+\newcommand{\pdfpois}{{\tt poisson}}
+\newcommand{\pdfgamma}{{\tt gamma}}
+\newcommand{\pdfnormal}{{\tt norm}}
+  \newcommand{\pdfexp}{{\tt expon}}
+\]</span></p>
+<!-- Distributions -->
+<p><span class="math display">\[
+\newcommand{\distbinom}{\operatorname{B}}
+\newcommand{\distbeta}{\operatorname{Beta}}
+\newcommand{\distgamma}{\operatorname{Gamma}}
+\newcommand{\distexp}{\operatorname{Exp}}
+\newcommand{\distpois}{\operatorname{Poisson}}
+\newcommand{\distnormal}{\operatorname{\mathcal N}}
+\]</span></p>
+</div>
 <section id="notations" class="level2">
 <h2 class="anchored" data-anchor-id="notations">Notations</h2>
 <ul>
 <li><span class="math inline">\(Y\)</span>: a random variable</li>
-<li><span class="math inline">\(\pr\rdb{Y\mid\theta}\)</span>: the probability of <span class="math inline">\(Y\)</span></li>
-<li><span class="math inline">\(p(y\mid\theta)=\pr\rdb{Y=y\mid\theta}\)</span>: the discrete probability density function</li>
-<li><span class="math inline">\(f(y\mid\theta)=\dfrac{\dl1}{\dl1y}\pr\rdb{Y\leq y\mid\theta}\)</span>: the continuous probability density function</li>
-<li><span class="math inline">\(\Exp\rdb{Y}\)</span>: the expectation of <span class="math inline">\(Y\)</span></li>
-<li><span class="math inline">\(\Var\rdb{Y}\)</span>: the variance of <span class="math inline">\(Y\)</span></li>
+<li><span class="math inline">\(\Pr(Y\mid\theta)\)</span>: the probability of <span class="math inline">\(Y\)</span></li>
+<li><span class="math inline">\(p(y\mid\theta)=\Pr(Y=y\mid\theta)\)</span>: the discrete probability density function</li>
+<li><span class="math inline">\(f(y\mid\theta)=\dfrac{\dl1}{\dl1y}\Pr(Y\leq y\mid\theta)\)</span>: the continuous probability density function</li>
+<li><span class="math inline">\(\Exp\qty(Y)\)</span>: the expectation of <span class="math inline">\(Y\)</span></li>
+<li><span class="math inline">\(\Var\qty(Y)\)</span>: the variance of <span class="math inline">\(Y\)</span></li>
 </ul>
 </section>
 <section id="distributions" class="level2">
@@ -744,13 +776,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../contents/0/rv1.html" class="pagination-link  aria-label=" &lt;span="">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">dis</span></span>
+      <a href="../../contents/0/statsmodels.html" class="pagination-link  aria-label=" &lt;span="" models&lt;="" span&gt;"="">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">stats models</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../contents/1/dist/binom.html" class="pagination-link" aria-label="<span class='chapter-number'>4</span>&nbsp; <span class='chapter-title'>Binomial distribution</span>">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Binomial distribution</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../contents/1/dist/binom.html" class="pagination-link" aria-label="<span class='chapter-number'>5</span>&nbsp; <span class='chapter-title'>Binomial distribution</span>">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Binomial distribution</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
