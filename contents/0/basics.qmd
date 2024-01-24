@@ -111,9 +111,12 @@ Note that `table` is handling the statistics, while `barplot` and `pie` draw on 
 ```{r}
 #| echo: false
 #| output: false
+library(knitr)
 library(reticulate)
 use_python("C:/Users/Xinli/miniforge3/envs/ds24")
+knitr::knit_engines$set(python = reticulate::eng_python)  
 ```
+
 
 
 
@@ -143,11 +146,13 @@ Then we could draw the barplot of this variable:
 import matplotlib.pyplot as plt
 vc = df['pop'].value_counts()
 plt.bar(vc.index, vc)
+plt.show()
 ```
 
 and the pie plot:
 ```{python}
 _ = plt.pie(vc)
+plt.show()
 ```
 
 Note that `table` is handling the statistics, while `barplot` and `pie` draw on top of the result from `table`.
