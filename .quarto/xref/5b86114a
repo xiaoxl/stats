@@ -1,1 +1,1 @@
-{"entries":[{"order":{"number":1,"section":[9,0,0,0,0,0,0]},"caption":"","key":"def-dist-gamma"},{"order":{"number":1,"section":[9,0,0,0,0,0,0]},"caption":"","key":"thm-dist-poisson-exp"}],"options":{"appendix-title":"Appendix","appendix-delim":":","chapters":true},"headings":[]}
+{"headings":[],"entries":[{"caption":"","key":"thm-dist-poisson-exp","order":{"section":[9,0,0,0,0,0,0],"number":1}},{"caption":"","key":"def-dist-gamma","order":{"section":[9,0,0,0,0,0,0],"number":1}}],"options":{"chapters":true,"appendix-title":"Appendix","appendix-delim":":"}}
