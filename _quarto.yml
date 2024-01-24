@@ -9,6 +9,17 @@ number-depth: 4
 bibliography: book.bib
 csl: ims.csl
 
+execute:
+  freeze: auto
+
+knitr:
+  opts_chunk:
+    comment: "#>"
+    collapse: true
+
+jupyter: ds24
+
+
 format:
   html:
     theme: united 
@@ -29,6 +40,7 @@ book:
     - part: contents/0/rv.qmd
       chapters:
           - contents/0/prob.qmd 
+          - contents/0/basics.qmd
           - contents/0/inferences.qmd
           - contents/0/statsmodels.qmd
     - part: contents/1/notations.qmd

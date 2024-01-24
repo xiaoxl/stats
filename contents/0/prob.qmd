@@ -59,6 +59,47 @@ $$
 $$
 :::
 
+### R code
+R has built-in random variables with different distributions. The naming convention is a prefix `d-`, `p-`, `q-` and `r-` together with the name of distribution. 
+
+- `d-`: density function of the given distribution;
+- `p-`: cumulative density function of the given distribution;
+- `q-`: quantile function of the given distribution (which is the inverse of `p-` function);
+- `r-`: random sampling from the given distribution.
+
+
+::: {.callout-tip collapse="true"}
+# Examples: normal distribution
+
+
+```{r}
+x <- seq(-4, 4, length=100)
+y <- dnorm(x, mean=2, sd=0.5)
+plot(x, y, type="l")
+```
+
+
+```{r}
+x <- seq(-4, 4, length=100)
+y <- pnorm(x, mean=2, sd=0.5)
+plot(x, y, type="l")
+```
+
+
+```{r}
+qnorm(0)
+qnorm(0.5)
+qnorm(1)
+```
+
+
+```{r}
+rnorm(10)
+```
+
+
+:::
+
 ## Random vectors
 
 

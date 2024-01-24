@@ -27,7 +27,21 @@ If the random variables $X_1,\ldots, X_n$ are iid, then these random variable co
 
 ::: {#def-}
 # Statistics
-Let $X_1,\ldots,X_n$ denote a sample on a random variable $X$. Let $T=T(X_1,\ldots,X_n)$ be a function of the sample. $T$ is called a **statistic**. Once a sample is drawn, $t=T(x_1,\ldots,x_n)$ is called the realization of $T$.
+Let $X_1,\ldots,X_n$ denote a sample on a random variable $X$. Let $T=T(X_1,\ldots,X_n)$ be a function of the sample. $T$ is called a **statistic**. Once a sample is drawn, $t=T(x_1,\ldots,x_n)$ is called the *realization* of $T$. 
+:::
+
+
+::: {#def-}
+# Sampling distribution
+- The distribution of $T$ is called the **sampling distribution**.
+- The standard deviation of the sampling distribution is called the **standard error of estimate**.
+:::
+
+
+
+::: {#thm-}
+# The Central Limit Theorem
+For large sample sizes, the mean $\bar{y}$ of a sample from a population with mean $\mu$ and a standard deviation $\sigma$ has a sampling distribution that is approximately normal.
 :::
 
 ### Point estimation
@@ -101,3 +115,30 @@ $$
 $$
 :::
 
+
+::: {#thm-}
+# Large-Sample $100(1-\alpha)\%$ Confidence interval
+$$
+L,U=\bar{\mu}\pm z_{\alpha/2}\qty(\frac{\bar{\sigma}}{\sqrt{n}}),
+$$
+where $z_{\alpha/2}=1.96$ if $\alpha=5\%$.
+
+:::
+
+- For any $n$, if $X_i\sim \mathcal N(\mu, \sigma^2)$, $T_n=\dfrac{\bar{X}-\mu}{S/\sqrt{n}}$ has a Student's $t$-distribution of degree of freedom $n-1$. 
+- When $n$ is big enough, for any distribution $X_i$, $Z_n=\dfrac{\bar{X}-\mu}{S/\sqrt{n}}$ is approximately $\mathcal N(0,1)$. 
+- Student's $t$-distribution of degree of freedom $n-1$ is approaching $\mathcal N(0,1)$ when $n$ is increasing. When $n=30$ they are very close to each other. Therefore in many cases Statisticians require sample size $\geq30$.
+- For large sample or small sample, the coefficients to compute confidence intervals are $z_{\alpha/2}$ or $t_{\alpha/2}$. These two numbers come from normal distribution or Student's $t$-distribution.
+
+
+
+## Hypothesis test
+Elements of a Statistical Test of Hypothesis 
+
+- Null Hypothesis $𝐻_0$ 
+- Alternative Hypothesis $𝐻_𝑎$ 
+- Test Statistic 
+- Level of significance $\alpha$ 
+- Rejection Region 
+- $𝑃$-Value 
+- Conclusion
