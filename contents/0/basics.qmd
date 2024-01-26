@@ -1,5 +1,17 @@
 # Basics 
 
+
+```{r}
+#| echo: false
+#| output: false
+library(knitr)
+library(reticulate)
+use_python("C:/Users/Xinli/miniforge3/envs/ds24")
+knitr::knit_engines$set(python = reticulate::eng_python)  
+```
+
+
+
 ## Data structure
 A dataset is a collection of *values*. Values are organized in two ways. Every value belongs to a *variable* and an *observation*. 
 
@@ -69,14 +81,24 @@ All the example about possums below come from the dataset [here](./assests/data/
 
 ```{r}
 #| echo: false
+fname <- getwd()
 knitr::opts_knit$set(root.dir = 'assests/data/')
 ```
+
+
+
 
 ```{r}
 df <- read.csv('possum.csv')
 head(df)
 ```
 
+
+
+```{r}
+#| echo: false
+knitr::opts_knit$set(root.dir = fname)
+```
 
 
 
@@ -108,16 +130,12 @@ Note that `table` is handling the statistics, while `barplot` and `pie` draw on 
 
 # Python
 
+
 ```{r}
 #| echo: false
-#| output: false
-library(knitr)
-library(reticulate)
-use_python("C:/Users/Xinli/miniforge3/envs/ds24")
-knitr::knit_engines$set(python = reticulate::eng_python)  
+fname <- getwd()
+knitr::opts_knit$set(root.dir = 'assests/data/')
 ```
-
-
 
 
 
@@ -125,6 +143,13 @@ knitr::knit_engines$set(python = reticulate::eng_python)
 import pandas as pd
 df = pd.read_csv("possum.csv")
 df.head()
+```
+
+
+
+```{r}
+#| echo: false
+knitr::opts_knit$set(root.dir = fname)
 ```
 
 
@@ -163,6 +188,7 @@ Note that `table` is handling the statistics, while `barplot` and `pie` draw on 
 :::
 
 
+
 ### Quantitative (numerical) data
 
 We would like to use **histogram** to display these type of data. In other words, we split the range into small segments (called *bins*), and count the frequency or relative frequency of data falling into these bins.
@@ -171,9 +197,23 @@ We would like to use **histogram** to display these type of data. In other words
 ::: {.callout-tip collapse="true"}
 # Example: Possums
 
+
+```{r}
+#| echo: false
+fname <- getwd()
+knitr::opts_knit$set(root.dir = 'assests/data/')
+```
+
+
 ```{r}
 df <- read.csv('possum.csv')
 head(df)
+```
+
+
+```{r}
+#| echo: false
+knitr::opts_knit$set(root.dir = fname)
 ```
 
 
