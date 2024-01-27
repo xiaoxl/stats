@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.530">
+<meta name="generator" content="quarto-1.4.549">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -123,7 +123,7 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-center sidebar-header">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../../../">Stats</a> 
     </div>
@@ -330,12 +330,12 @@ window.Quarto = {
 </div>
 <p>Poisson distribution is a discrete probability distribution that expresses the probability of a given number of events occurring in a fixed interval of time or space if these events occur with a known constant mean rate and independently of the time since the last event.</p>
 <div id="def-dist-poisson" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 8.1 </strong></span>Let <span class="math inline">\(\mathcal Y=\set{0,1,2,\ldots}\)</span>. The uncertain quantity <span class="math inline">\(Y\in\mathcal Y\)</span> has a <em>Poisson distribution with mean <span class="math inline">\(\theta\)</span></em> (denoted by <span class="math inline">\(Y\sim\distpois(\theta)\)</span>) if <span class="math display">\[
+<p><span class="theorem-title"><strong>Definition 8.1</strong></span> Let <span class="math inline">\(\mathcal Y=\set{0,1,2,\ldots}\)</span>. The uncertain quantity <span class="math inline">\(Y\in\mathcal Y\)</span> has a <em>Poisson distribution with mean <span class="math inline">\(\theta\)</span></em> (denoted by <span class="math inline">\(Y\sim\distpois(\theta)\)</span>) if <span class="math display">\[
 \Pr\qty(Y=y\mid \theta)=\pdfpois(y,\theta)=\dfrac{\theta^y\me^{-\theta}}{y!}\propto\theta^y/y!.
 \]</span></p>
 </div>
 <div id="thm-dist-poisson-exp" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 8.1 </strong></span>If <span class="math inline">\(Y\sim \distpois(\theta)\)</span>, then</p>
+<p><span class="theorem-title"><strong>Theorem 8.1</strong></span> If <span class="math inline">\(Y\sim \distpois(\theta)\)</span>, then</p>
 <ul>
 <li><span class="math inline">\(\Exp\qty[Y|\theta]=\theta\)</span>,</li>
 <li><span class="math inline">\(\Var\qty[Y|\theta]=\theta\)</span>,</li>
@@ -374,7 +374,7 @@ Proof
 </div>
 </div>
 <div id="thm-" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 8.2 (Moment generating function) </strong></span>Let <span class="math inline">\(Y\sim\distpois(\theta)\)</span>. Then <span class="math display">\[
+<p><span class="theorem-title"><strong>Theorem 8.2 (Moment generating function)</strong></span> Let <span class="math inline">\(Y\sim\distpois(\theta)\)</span>. Then <span class="math display">\[
 M(t)=\Exp\qty[\me^{tY}]=\exp(\theta(\me^t-1))=\me^{\theta(\me^t-1)}.
 \]</span></p>
 </div>
@@ -405,7 +405,7 @@ Proof
 <p>Consider the number of events happen during a fixed length period. This is a Poisson process. Assume that the expectation of the distribution is <span class="math inline">\(\theta\)</span>. This means that we could expect <span class="math inline">\(\theta\)</span> events happening during the time. The distribution of the process is <span class="math inline">\(\pdfpois(y, \theta)\)</span>.</p>
 <p>We may understand the process in terms of binomial distribution. We could split the time period into <span class="math inline">\(n\)</span> pieces. The probability of that the event happens in one piece is <span class="math inline">\(p\)</span>. Then this process can be described by a binomial distribution <span class="math inline">\(\pdfbinom(y, n, p)\)</span>. Its expectation value is <span class="math inline">\(np\)</span>. Then we have <span class="math inline">\(np=\theta\)</span>. Therefore <span class="math inline">\(p=\theta/n\)</span>.</p>
 <div id="thm-poisson_binom" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 8.3 </strong></span>Poisson distribution is the limit of binomial distribution:</p>
+<p><span class="theorem-title"><strong>Theorem 8.3</strong></span> Poisson distribution is the limit of binomial distribution:</p>
 <p><span class="math display">\[
 \lim_{n\rightarrow\infty}\pdfbinom(y,n,\theta/n)=\pdfpois(y,\theta).
 \]</span></p>
@@ -600,7 +600,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      return note.innerHTML;
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
     }
   }
   for (var i=0; i<xrefs.length; i++) {

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.530">
+<meta name="generator" content="quarto-1.4.549">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -157,7 +157,7 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-center sidebar-header">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../../">Stats</a> 
     </div>
@@ -381,12 +381,12 @@ window.Quarto = {
 <section id="random-variables" class="level2" data-number="1.2">
 <h2 data-number="1.2" class="anchored" data-anchor-id="random-variables"><span class="header-section-number">1.2</span> Random variables</h2>
 <div id="def-" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 1.1 (Expectation) </strong></span><span class="math display">\[
+<p><span class="theorem-title"><strong>Definition 1.1 (Expectation)</strong></span> <span class="math display">\[
 \Exp\mqty[u(X)] = \int_{-\infty}^{\infty}u(x)f(x)\dl3x.
 \]</span></p>
 </div>
 <div id="def-" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 1.2 </strong></span>&nbsp;</p>
+<p><span class="theorem-title"><strong>Definition 1.2</strong></span> &nbsp;</p>
 <ol type="1">
 <li><span class="math inline">\(\mu=\Exp(X)\)</span> is called the <strong>mean value</strong> of <span class="math inline">\(X\)</span>.</li>
 <li><span class="math inline">\(\sigma^2=\Var(X)=\Exp\mqty[(X-\mu)^2]\)</span> is called the <strong>variance</strong> of <span class="math inline">\(X\)</span>.</li>
@@ -394,7 +394,7 @@ window.Quarto = {
 </ol>
 </div>
 <div id="prp-" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 1.1 </strong></span>&nbsp;</p>
+<p><span class="theorem-title"><strong>Proposition 1.1</strong></span> &nbsp;</p>
 <ol type="1">
 <li><span class="math inline">\(\Exp\mqty[ag(X)+bh(X)]=a\Exp\mqty[g(X)]+b\Exp\mqty[h(X)]\)</span>.</li>
 <li><span class="math inline">\(\Var\mqty[X]=\Exp\mqty[(X-\mu)^2]=\Exp(X^2)-\mu^2\)</span>.</li>
@@ -481,10 +481,10 @@ Examples: normal distribution
 <section id="random-vectors" class="level2" data-number="1.3">
 <h2 data-number="1.3" class="anchored" data-anchor-id="random-vectors"><span class="header-section-number">1.3</span> Random vectors</h2>
 <div id="def-randomvector" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 1.3 (Random vector) </strong></span>Given a random experiment with a sample space <span class="math inline">\(\mathcal C\)</span>, consider two random variables <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span>, which assign to each element <span class="math inline">\(c\)</span> of <span class="math inline">\(\mathcal C\)</span> one and only one ordered pair of numbers <span class="math inline">\(X_1(c)=x_1\)</span>, <span class="math inline">\(X_2(c)=x_2\)</span>. Then we say that <span class="math inline">\((X_1, X_2)\)</span> is a <strong>random vector</strong>. The <strong>space</strong> of <span class="math inline">\((X_1, X_2)\)</span> is the set of orderd pairs <span class="math inline">\(\mathcal D=\set{(x_1, x_2)\mid x_1=X_1(c), x_2=X_2(c), c\in\mathcal C}\)</span>.</p>
+<p><span class="theorem-title"><strong>Definition 1.3 (Random vector)</strong></span> Given a random experiment with a sample space <span class="math inline">\(\mathcal C\)</span>, consider two random variables <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span>, which assign to each element <span class="math inline">\(c\)</span> of <span class="math inline">\(\mathcal C\)</span> one and only one ordered pair of numbers <span class="math inline">\(X_1(c)=x_1\)</span>, <span class="math inline">\(X_2(c)=x_2\)</span>. Then we say that <span class="math inline">\((X_1, X_2)\)</span> is a <strong>random vector</strong>. The <strong>space</strong> of <span class="math inline">\((X_1, X_2)\)</span> is the set of orderd pairs <span class="math inline">\(\mathcal D=\set{(x_1, x_2)\mid x_1=X_1(c), x_2=X_2(c), c\in\mathcal C}\)</span>.</p>
 </div>
 <div id="def-cdf" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 1.4 (Joint Cumulative Distribution Function) </strong></span><strong>The joint cumulative distribution function</strong> of <span class="math inline">\((X_1, X_2)\)</span> is defined as follows.</p>
+<p><span class="theorem-title"><strong>Definition 1.4 (Joint Cumulative Distribution Function)</strong></span> <strong>The joint cumulative distribution function</strong> of <span class="math inline">\((X_1, X_2)\)</span> is defined as follows.</p>
 <!-- $$
 F_{X_1,X_2}(x_1,x_2)=\pr\sqb{\set{X_1\leq x_1}\cap\set{X_2\leq x_2}}.
 $$
@@ -501,30 +501,30 @@ p_{X_1,X_2}(x_1,x_2)=\pr\sqb{X_1=x_1,X_2=x_2}.
 $$
 ::: -->
 <div id="def-cdf" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 1.5 (Joint probability density function (pdf)) </strong></span>In continuous random vector case, the <strong>pdf</strong> is defined as<br>
+<p><span class="theorem-title"><strong>Definition 1.5 (Joint probability density function (pdf))</strong></span> In continuous random vector case, the <strong>pdf</strong> is defined as<br>
 <span class="math display">\[
 f_{X_1, X_2}(x_1, x_2)=\frac{\partial^2F_{X_1, X_2}(x_1,x_2)}{\partial x_1\partial x_2}.
 \]</span></p>
 </div>
 <div id="def-marginal" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 1.6 (Marginal pdf) </strong></span>Assume <span class="math inline">\((X_1, X_2)\)</span> be a continuous random vector. The <strong>marginal pdf</strong> is <span class="math display">\[
+<p><span class="theorem-title"><strong>Definition 1.6 (Marginal pdf)</strong></span> Assume <span class="math inline">\((X_1, X_2)\)</span> be a continuous random vector. The <strong>marginal pdf</strong> is <span class="math display">\[
 f_{X_1}(x_1)=\int_{-\infty}^{\infty}f(x_1, x_2)\dl3x_2.
 \]</span></p>
 </div>
 <div id="def-" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 1.7 (Expectation) </strong></span>Assume that <span class="math inline">\(Y=g(X_1, X_2)\)</span>. Then <span class="math display">\[
+<p><span class="theorem-title"><strong>Definition 1.7 (Expectation)</strong></span> Assume that <span class="math inline">\(Y=g(X_1, X_2)\)</span>. Then <span class="math display">\[
 \Exp(Y)=\int_{-\infty}^{\infty}\int_{-\infty}^{\infty} g(x_1, x_2) f_{X_1, X_2}(x_1,x_2)\dl3x_1\dl3x_2.
 \]</span></p>
 </div>
 <div id="def-conditionaldistribution" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 1.8 (Conditional probability) </strong></span>The conditional pdf is defined as follows: <span class="math display">\[
+<p><span class="theorem-title"><strong>Definition 1.8 (Conditional probability)</strong></span> The conditional pdf is defined as follows: <span class="math display">\[
 f_{X_1\mid X_2}(x_1\mid x_2)=\frac{f_{X_1,X_2}(x_1,x_2)}{f_{X_1}(x_1)}=\frac{f_{X_1,X_2}(x_1,x_2)}{\int_{-\infty}^{\infty} f_{X_1,X_2}(x_1,w)\dl3w},
 \]</span> and the corresponding conditional probability is defined as <span class="math display">\[
 \Pr(X_1\in A\mid X_2=x_2)=\int_Af_{X_1\mid X_2}(x_1\mid x_2)\dl3x_1.
 \]</span> Thus <span class="math inline">\(f_{X_1\mid X_2}(x_1\mid x_2)\)</span> is a pdf of a random function of <span class="math inline">\(X_1\)</span>.</p>
 </div>
 <div id="thm-" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 1.1 </strong></span>Let <span class="math inline">\((X_1, X_2)\)</span> be a random vector such that <span class="math inline">\(\Var(X_2)\)</span> is finite. <span class="math inline">\(\Exp(X_2\mid X_1=x_1)\)</span> and <span class="math inline">\(\Var(X_2\mid X_1=x_1)\)</span> can be seen as random functions of <span class="math inline">\(X_1\)</span>. Then</p>
+<p><span class="theorem-title"><strong>Theorem 1.1</strong></span> Let <span class="math inline">\((X_1, X_2)\)</span> be a random vector such that <span class="math inline">\(\Var(X_2)\)</span> is finite. <span class="math inline">\(\Exp(X_2\mid X_1=x_1)\)</span> and <span class="math inline">\(\Var(X_2\mid X_1=x_1)\)</span> can be seen as random functions of <span class="math inline">\(X_1\)</span>. Then</p>
 <ol type="a">
 <li><span class="math inline">\(\Exp\mqty[\Exp(X_2\mid X_1)]=\Exp(X_2)\)</span>.</li>
 <li><span class="math inline">\(\Var\mqty[\Var(X_2\mid X_1)]\leq\Var(X_2)\)</span>.</li>
@@ -534,7 +534,7 @@ f_{X_1\mid X_2}(x_1\mid x_2)=\frac{f_{X_1,X_2}(x_1,x_2)}{f_{X_1}(x_1)}=\frac{f_{
 <h3 data-number="1.3.1" class="anchored" data-anchor-id="relations-to-single-variable-case"><span class="header-section-number">1.3.1</span> Relations to single variable case</h3>
 <p>Under the assumption of two variables <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>, when only talking about one variable <span class="math inline">\(X\)</span> (resp. <span class="math inline">\(Y\)</span>), we are actually talking about the random variable corresponding to the marginal pdf. The ignoring the other variable part is handled by the integration part.</p>
 <div id="prp-" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 1.2 </strong></span>&nbsp;</p>
+<p><span class="theorem-title"><strong>Proposition 1.2</strong></span> &nbsp;</p>
 <ol type="1">
 <li><span class="math inline">\(\Exp_X\mqty[u(X)]=\Exp\mqty[u(X)]\)</span>.</li>
 <li><span class="math inline">\(\Var_X(X)=\Var(X)\)</span>.</li>
@@ -605,7 +605,7 @@ f_{X_1\mid X_2}(x_1\mid x_2)=\frac{f_{X_1,X_2}(x_1,x_2)}{f_{X_1}(x_1)}=\frac{f_{
 <section id="section" class="level2" data-number="1.5">
 <h2 data-number="1.5" class="anchored" data-anchor-id="section"><span class="header-section-number">1.5</span> </h2>
 <div id="thm-bayesthm" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 1.2 </strong></span><span class="math display">\[
+<p><span class="theorem-title"><strong>Theorem 1.2</strong></span> <span class="math display">\[
 f_{X\mid Y=y}(x)=\frac{f_{Y\mid X=x}(y\mid x)f_X(x)}{f_Y(y)}
 \]</span></p>
 </div>
@@ -794,7 +794,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      return note.innerHTML;
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
     }
   }
   for (var i=0; i<xrefs.length; i++) {

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.530">
+<meta name="generator" content="quarto-1.4.549">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -157,7 +157,7 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-center sidebar-header">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../../../">Stats</a> 
     </div>
@@ -357,7 +357,7 @@ window.Quarto = {
 \]</span></p>
 </div>
 <div id="def-dist-gamma" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 9.1 </strong></span>Let <span class="math inline">\(\mathcal Y=\set{0,1,2,\ldots}\)</span>. The uncertain quantity <span class="math inline">\(Y\in\mathcal Y\)</span> has a (denoted by <span class="math inline">\(Y\sim\distgamma(a,b)\)</span> or <span class="math inline">\(Y\sim\Gamma(a,b)\)</span>) if <span class="math display">\[
+<p><span class="theorem-title"><strong>Definition 9.1</strong></span> Let <span class="math inline">\(\mathcal Y=\set{0,1,2,\ldots}\)</span>. The uncertain quantity <span class="math inline">\(Y\in\mathcal Y\)</span> has a (denoted by <span class="math inline">\(Y\sim\distgamma(a,b)\)</span> or <span class="math inline">\(Y\sim\Gamma(a,b)\)</span>) if <span class="math display">\[
 \Pr\qty(Y=\theta\mid a,b)=\pdfgamma(\theta,a, b)=\dfrac{b^a}{\Gamma(a)}\theta^{a-1}\me^{-b\theta},\quad \text{for }\theta,a,b&gt;0.
 \]</span></p>
 <p>Here</p>
@@ -402,7 +402,7 @@ Python code
 </div>
 </div>
 <div id="thm-dist-poisson-exp" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 9.1 </strong></span>If <span class="math inline">\(Y\sim \distgamma(a, b)\)</span>, then</p>
+<p><span class="theorem-title"><strong>Theorem 9.1</strong></span> If <span class="math inline">\(Y\sim \distgamma(a, b)\)</span>, then</p>
 <ul>
 <li><span class="math inline">\(\Exp\qty[Y\mid a, b]=a/b\)</span>,</li>
 <li><span class="math inline">\(\Var\qty[Y\mid a, b]=a/b^2\)</span>,</li>
@@ -616,7 +616,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      return note.innerHTML;
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
     }
   }
   for (var i=0; i<xrefs.length; i++) {

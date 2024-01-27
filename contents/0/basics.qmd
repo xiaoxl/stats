@@ -7,6 +7,9 @@
 library(knitr)
 library(reticulate)
 use_python("C:/Users/Xinli/miniforge3/envs/ds24")
+
+.foldername <- getwd()
+knitr::opts_knit$set(root.dir = 'assests/data/')
 ```
 
 
@@ -77,29 +80,10 @@ All the example about possums below come from the dataset [here](./assests/data/
 
 
 # R
-
-```{r}
-#| echo: false
-fname <- getwd()
-knitr::opts_knit$set(root.dir = 'assests/data/')
-```
-
-
-
-
 ```{r}
 df <- read.csv('possum.csv')
 head(df)
 ```
-
-
-
-```{r}
-#| echo: false
-knitr::opts_knit$set(root.dir = fname)
-```
-
-
 
 
 We first compute the frequency table of the variable `pop`:
@@ -129,28 +113,11 @@ Note that `table` is handling the statistics, while `barplot` and `pie` draw on 
 
 # Python
 
-
-```{r}
-#| echo: false
-fname <- getwd()
-knitr::opts_knit$set(root.dir = 'assests/data/')
-```
-
-
-
 ```{python}
 import pandas as pd
 df = pd.read_csv("possum.csv")
 df.head()
 ```
-
-
-
-```{r}
-#| echo: false
-knitr::opts_knit$set(root.dir = fname)
-```
-
 
 
 
@@ -193,26 +160,10 @@ We would like to use **histogram** to display these type of data. In other words
 
 ::: {.callout-tip collapse="true"}
 # Example: Possums
-
-
-```{r}
-#| echo: false
-fname <- getwd()
-knitr::opts_knit$set(root.dir = 'assests/data/')
-```
-
-
 ```{r}
 df <- read.csv('possum.csv')
 head(df)
 ```
-
-
-```{r}
-#| echo: false
-knitr::opts_knit$set(root.dir = fname)
-```
-
 
 We display the histogram of `headL`. We could use `breaks` to control the number of bins.
 ```{r}
@@ -225,6 +176,7 @@ The function `hist` does not just draw the histogram. It also provide many infom
 res <- hist(df$headL, breaks=10)
 res
 ```
+
 :::
 
 ### Some statistics
@@ -335,3 +287,9 @@ A **random sample** of $n$ experimental units is one selected from the populatio
 
 
 
+
+
+```{r}
+#| echo: false
+knitr::opts_knit$set(root.dir = .foldername)
+```
