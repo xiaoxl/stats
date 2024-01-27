@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.530">
+<meta name="generator" content="quarto-1.4.549">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -123,7 +123,7 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-center sidebar-header">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../../../">Stats</a> 
     </div>
@@ -331,14 +331,14 @@ window.Quarto = {
 </div>
 <p>Let <span class="math inline">\(\mathcal Y=\set{0,\ldots,n}\)</span>.</p>
 <div id="def-distribution-binom" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 5.1 (Binomial distribution) </strong></span><span class="math inline">\(Y\in\mathcal Y\)</span> has a <em>binomial distribution with probability <span class="math inline">\(\theta\)</span></em>, denoted by <span class="math inline">\(Y\sim\distbinom(n, \theta)\)</span>, if <span class="math display">\[
+<p><span class="theorem-title"><strong>Definition 5.1 (Binomial distribution)</strong></span> <span class="math inline">\(Y\in\mathcal Y\)</span> has a <em>binomial distribution with probability <span class="math inline">\(\theta\)</span></em>, denoted by <span class="math inline">\(Y\sim\distbinom(n, \theta)\)</span>, if <span class="math display">\[
 \Pr(y\mid\theta)=\Pr\qty(Y=y\mid \theta)=\pdfbinom(y,n,\theta)=\dbinom{n}{y}\theta^y(1-\theta)^{n-y}.
 \]</span></p>
 </div>
 <section id="expected-values" class="level2" data-number="5.1">
 <h2 data-number="5.1" class="anchored" data-anchor-id="expected-values"><span class="header-section-number">5.1</span> Expected values</h2>
 <div id="thm-dist-binom-exp" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 5.1 </strong></span>Let <span class="math inline">\(Y\sim\distbinom(n,\theta)\)</span>. Then <span class="math display">\[
+<p><span class="theorem-title"><strong>Theorem 5.1</strong></span> Let <span class="math inline">\(Y\sim\distbinom(n,\theta)\)</span>. Then <span class="math display">\[
 \Exp\qty(Y)=n\theta.
 \]</span></p>
 </div>
@@ -539,7 +539,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      return note.innerHTML;
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
     }
   }
   for (var i=0; i<xrefs.length; i++) {
