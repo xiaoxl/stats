@@ -1,4 +1,6 @@
+
 # Basics 
+
 
 
 ```{r}
@@ -6,9 +8,8 @@
 #| output: false
 library(knitr)
 library(reticulate)
-use_python("C:/Users/Xinli/miniforge3/envs/ds24")
+use_condaenv("ds24")
 
-.foldername <- getwd()
 knitr::opts_knit$set(root.dir = 'assests/data/')
 ```
 
@@ -286,10 +287,3 @@ A **random sample** of $n$ experimental units is one selected from the populatio
 :::
 
 
-
-
-
-```{r}
-#| echo: false
-knitr::opts_knit$set(root.dir = .foldername)
-```

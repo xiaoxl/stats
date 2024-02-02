@@ -1,3 +1,99 @@
 # slr
 
-ddd
+{{< include ../math.qmd >}}
+
+
+We want to use sample data to investigate the relationships among a group of variables, ultimately to create a model for some variable that can be used to predict its value in the futre. 
+
+Language:
+ 
+- Predicting the value of $X$ by $\Exp(X)$ is tantamount to using $\Exp(X)$ as a **model** for the true $X$.
+- The variable to be modeled is called the **dependent** (or **reponse**) variable.
+
+## Probabilistic model for $y$
+
+The **probabilistic model** for $y$ is
+$$
+y=\Exp(y)+\text{Random error}.
+$$
+It is called *probabilistic* since we can make a probability statement about the magnitude of the deviation between $y$ and $\Exp(y)$.
+
+
+::: {.callout-note}
+# General Form of Probabilistic Model in Regression
+$$
+y=\Exp(y)+\varepsilon
+$$
+where
+
+- $y$: Dependent variable
+- $\Exp(y)$: Mean value of $y$
+- $\varepsilon$: Unexplainable or random error
+:::
+
+
+::: {#def-}
+The variables used to predict $y$ are called **independent variables** and are denoted by $x_i$.
+:::
+
+
+::: {.callout-tip}
+# Regression Modeling
+
+1. Hypothesize the form of the model for $\Exp(y)$.
+2. Collect the sample data.
+3. Use the sample data to estimate unknown parameters in the model.
+4. Specify the probability distribution of $\varepsilon$, and estimate any unknown parameters of this distribution.
+5. Statistically check the usefulness of the model.
+6. CHeck the validity of the assumptions on $\varepsilon$, and make model modifications if necessary.
+7. When satisfied that the model is useful, and assumptions are met, use the model to make inferences.
+:::
+
+
+## SLR
+
+
+::: {.callout-note}
+# A First-Order Model
+$$
+y=\beta_0+\beta_1x+\varepsilon
+$$
+where
+
+- $y$: The **response** variable
+- $x$: The **independent** variable (variable used as a **predictor** of $y$)
+- $\Exp(y)=\beta_0+\beta_1x$: Deterministic component
+- $\varepsilon$: Random error component
+- $\beta_0$: **$y$-intercept**
+- $\beta_1$: **Slope**
+:::
+
+### Fitting the model
+
+MLE=LSE
+
+first assuming that $\sigma$ is constant.
+
+
+
+- Sum of squares of deviations for the $x$s: $SS_{xx}=\sum(x_i-\bar{x})^2$
+- Sum of squares of deviations for the $y$s: $SS_{yy}=\sum(y_i-\bar{y})^2$
+- Sum of cross-products: $SS_{xy}=\sum(x_i-\bar{x})(y_i-\bar{y})$
+
+
+
+::: {#thm-}
+Estimate $\beta_0$, $\beta_1$ and $\sigma^2$. The NLL is
+$$
+NLL = -\frac{n}{2}\ln\qty(2\pi\sigma^2)-\frac{1}{2\sigma^2}\sum\qty(y_i-\beta_0-\beta_1x_i)^2.
+$$
+:::
+
+
+::: {.solution}
+$$
+\begin{split}
+\pdv{NLL}{\beta_0}&=
+\end{split}
+$$
+:::
