@@ -351,7 +351,29 @@
     "href": "contents/2/slr.html",
     "title": "11  slr",
     "section": "",
-    "text": "ddd",
+    "text": "11.1 Probabilistic model for \\(y\\)\nThe probabilistic model for \\(y\\) is \\[\ny=\\Exp(y)+\\text{Random error}.\n\\] It is called probabilistic since we can make a probability statement about the magnitude of the deviation between \\(y\\) and \\(\\Exp(y)\\).",
+    "crumbs": [
+      "SLR",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>slr</span>"
+    ]
+  },
+  {
+    "objectID": "contents/2/slr.html#probabilistic-model-for-y",
+    "href": "contents/2/slr.html#probabilistic-model-for-y",
+    "title": "11  slr",
+    "section": "",
+    "text": "General Form of Probabilistic Model in Regression\n\n\n\n\\[\ny=\\Exp(y)+\\varepsilon\n\\] where\n\n\\(y\\): Dependent variable\n\\(\\Exp(y)\\): Mean value of \\(y\\)\n\\(\\varepsilon\\): Unexplainable or random error\n\n\n\n\nDefinition 11.1 The variables used to predict \\(y\\) are called independent variables and are denoted by \\(x_i\\).\n\n\n\n\n\n\n\nRegression Modeling\n\n\n\n\nHypothesize the form of the model for \\(\\Exp(y)\\).\nCollect the sample data.\nUse the sample data to estimate unknown parameters in the model.\nSpecify the probability distribution of \\(\\varepsilon\\), and estimate any unknown parameters of this distribution.\nStatistically check the usefulness of the model.\nCHeck the validity of the assumptions on \\(\\varepsilon\\), and make model modifications if necessary.\nWhen satisfied that the model is useful, and assumptions are met, use the model to make inferences.",
+    "crumbs": [
+      "SLR",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>slr</span>"
+    ]
+  },
+  {
+    "objectID": "contents/2/slr.html#slr",
+    "href": "contents/2/slr.html#slr",
+    "title": "11  slr",
+    "section": "11.2 SLR",
+    "text": "11.2 SLR\n\n\n\n\n\n\nA First-Order Model\n\n\n\n\\[\ny=\\beta_0+\\beta_1x+\\varepsilon\n\\] where\n\n\\(y\\): The response variable\n\\(x\\): The independent variable (variable used as a predictor of \\(y\\))\n\\(\\Exp(y)=\\beta_0+\\beta_1x\\): Deterministic component\n\\(\\varepsilon\\): Random error component\n\\(\\beta_0\\): \\(y\\)-intercept\n\\(\\beta_1\\): Slope\n\n\n\n\n11.2.1 Fitting the model\nMLE=LSE\nfirst assuming that \\(\\sigma\\) is constant.\n\nSum of squares of deviations for the \\(x\\)s: \\(SS_{xx}=\\sum(x_i-\\bar{x})^2\\)\nSum of squares of deviations for the \\(y\\)s: \\(SS_{yy}=\\sum(y_i-\\bar{y})^2\\)\nSum of cross-products: \\(SS_{xy}=\\sum(x_i-\\bar{x})(y_i-\\bar{y})\\)\n\n\nTheorem 11.1 Estimate \\(\\beta_0\\), \\(\\beta_1\\) and \\(\\sigma^2\\). The NLL is \\[\nNLL = -\\frac{n}{2}\\ln\\qty(2\\pi\\sigma^2)-\\frac{1}{2\\sigma^2}\\sum\\qty(y_i-\\beta_0-\\beta_1x_i)^2.\n\\]\n\n\nSolution. \\[\n\\begin{split}\n\\pdv{NLL}{\\beta_0}&=\n\\end{split}\n\\]",
     "crumbs": [
       "SLR",
       "<span class='chapter-number'>11</span>  <span class='chapter-title'>slr</span>"
