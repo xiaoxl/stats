@@ -5,6 +5,7 @@
 
 ```{r}
 #| echo: false
+#| eval: false
 #| output: false
 library(knitr)
 library(reticulate)
@@ -77,12 +78,9 @@ All the example about possums below come from the dataset [here](./assests/data/
 
 
 
-::: {.panel-tabset}
-
-
 # R
 ```{r}
-df <- read.csv('possum.csv')
+df <- read.csv('assests/data/possum.csv')
 head(df)
 ```
 
@@ -112,47 +110,6 @@ Note that `table` is handling the statistics, while `barplot` and `pie` draw on 
 
 
 
-# Python
-
-```{python}
-import pandas as pd
-df = pd.read_csv("possum.csv")
-df.head()
-```
-
-
-
-We first compute the frequency table of the variable `pop`:
-
-```{python}
-df['pop'].value_counts()
-```
-or relative frequency talbe:
-```{python}
-df['pop'].value_counts(normalize=True)
-```
-
-Then we could draw the barplot of this variable:
-
-```{python}
-import matplotlib.pyplot as plt
-vc = df['pop'].value_counts()
-plt.bar(vc.index, vc)
-```
-
-and the pie plot:
-```{python}
-_ = plt.pie(vc)
-```
-
-Note that `table` is handling the statistics, while `barplot` and `pie` draw on top of the result from `table`.
-
-
-:::
-
-:::
-
-
 
 ### Quantitative (numerical) data
 
@@ -162,7 +119,7 @@ We would like to use **histogram** to display these type of data. In other words
 ::: {.callout-tip collapse="true"}
 # Example: Possums
 ```{r}
-df <- read.csv('possum.csv')
+df <- read.csv('assests/data/possum.csv')
 head(df)
 ```
 
