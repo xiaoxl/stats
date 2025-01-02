@@ -5,13 +5,9 @@
 
 ```{r}
 #| echo: false
-#| eval: false
 #| output: false
-library(knitr)
 library(reticulate)
-use_condaenv("ds24")
-
-knitr::opts_knit$set(root.dir = 'assests/data/')
+use_virtualenv("../../venv")
 ```
 
 
@@ -77,13 +73,12 @@ To display it, we could use table, bar chart or pie chart.
 All the example about possums below come from the dataset [here](./assests/data/possum.csv).
 
 
-
-# R
+::: {.panel-tabset}
+## R
 ```{r}
 df <- read.csv('assests/data/possum.csv')
 head(df)
 ```
-
 
 We first compute the frequency table of the variable `pop`:
 
@@ -109,6 +104,39 @@ pie(table(df$pop))
 Note that `table` is handling the statistics, while `barplot` and `pie` draw on top of the result from `table`.
 
 
+## Python
+
+```{python}
+import pandas as pd
+df = pd.read_csv('assests/data/possum.csv')
+df.head()
+```
+
+
+We first compute the frequency table of the variable `pop`:
+
+```{python}
+df['pop'].value_counts()
+```
+or relative frequency talbe:
+```{python}
+df['pop'].value_counts(normalize=True)
+```
+
+Then we could draw the barplot of this variable:
+
+```{python}
+import matplotlib.pyplot as plt
+vc = df['pop'].value_counts()
+plt.bar(vc.index, vc)
+```
+
+and the pie plot:
+```{python}
+_ = plt.pie(vc)
+```
+
+:::
 
 
 ### Quantitative (numerical) data
