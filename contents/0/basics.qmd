@@ -11,6 +11,31 @@ use_virtualenv("../../venv")
 ```
 
 
+## Population vs Sample
+
+- **Population**: the set of all elements of interest in a particular study.
+- **Sample**: is a subset of the population
+- **Statistical Inference**: The process of using data collected on a sample to draw conclusions about a population is called statistical inference. 
+
+
+::: {#exm-}
+According to the research firm TVNewser (May 2017), the average age of viewers of CNN news programming is 60 years. Suppose a FOX network executive hypothesized that the average age of FOX News viewer is greater than 60. To test her hypothesis, she samples 500 FOX News viewers and determines the age of each.
+
+a. Describe the population
+b. Describe the sample
+c. Sample size
+d. Describe the statistical inference
+:::
+<!-- 
+
+## Variable Types
+
+- Qualitative (categorical) data use labels or names to identify an attribute of an element.
+- Quantitative (numerical) data use numeric values.
+
+- Discrete random variable: A random variable that assumes either a finite number of values or an infinite sequence of values such as 0, 1, 2…
+- Continuous random variable: A random variable that may assume any numerical value in an interval or collection of intervals  -->
+
 
 ## Data structure
 A dataset is a collection of *values*. Values are organized in two ways. Every value belongs to a *variable* and an *observation*. 
