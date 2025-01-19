@@ -224,3 +224,6 @@ The concept of a sampling distribution is foundational in inferential statistics
 
 
 ![](assests/img/20250118234513.png)
+
+
+![](assests/img/20250119120825.png)
