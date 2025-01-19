@@ -13,7 +13,7 @@ execute:
   freeze: auto
 
 
-jupyter: ds25
+jupyter: ds24
 
 knitr:
   opts_chunk:
@@ -74,7 +74,7 @@ book:
   # navbar:
   #   subtitle: "2023 Fall"
   #   pinned: false
-  page-navigation: true
+  page-navigation: false
 
 
 

@@ -83,8 +83,6 @@ div.csl-indent {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../contents/0/inferences.html" rel="next">
-<link href="../../contents/0/prob.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -320,9 +318,8 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul class="collapse">
-  <li><a href="#population-vs-sample" id="toc-population-vs-sample" class="nav-link active" data-scroll-target="#population-vs-sample"><span class="header-section-number">2.1</span> Population vs Sample</a></li>
-  <li><a href="#data-structure" id="toc-data-structure" class="nav-link" data-scroll-target="#data-structure"><span class="header-section-number">2.2</span> Data structure</a></li>
-  <li><a href="#data-visualization" id="toc-data-visualization" class="nav-link" data-scroll-target="#data-visualization"><span class="header-section-number">2.3</span> Data Visualization</a></li>
+  <li><a href="#data-structure" id="toc-data-structure" class="nav-link active" data-scroll-target="#data-structure"><span class="header-section-number">2.1</span> Data structure</a></li>
+  <li><a href="#data-visualization" id="toc-data-visualization" class="nav-link" data-scroll-target="#data-visualization"><span class="header-section-number">2.2</span> Data Visualization</a></li>
   </ul>
 </nav>
     </div>
@@ -348,19 +345,8 @@ window.Quarto = {
 </header>
 
 
-<section id="population-vs-sample" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="population-vs-sample"><span class="header-section-number">2.1</span> Population vs Sample</h2>
-<ul>
-<li><strong>Population</strong>: the set of all elements of interest in a particular study.</li>
-<li><strong>Sample</strong>: is a subset of the population</li>
-<li><strong>Statistical Inference</strong>: The process of using data collected on a sample to draw conclusions about a population is called statistical inference.</li>
-</ul>
-<div id="exm-" class="theorem example">
-<p><span class="theorem-title"><strong>Example 2.1</strong></span> According to the research firm TVNewser (May 2017), the average age of viewers of CNN news programming is 60 years. Suppose a FOX network executive hypothesized that the average age of FOX News viewer is greater than 60. To test her hypothesis, she samples 500 FOX News viewers and determines the age of each. a. Describe the population b. Describe the sample c.&nbsp;Sample size d.&nbsp;Describe the statistical inference</p>
-</div>
-</section>
-<section id="data-structure" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="data-structure"><span class="header-section-number">2.2</span> Data structure</h2>
+<section id="data-structure" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="data-structure"><span class="header-section-number">2.1</span> Data structure</h2>
 <p>A dataset is a collection of <em>values</em>. Values are organized in two ways. Every value belongs to a <em>variable</em> and an <em>observation</em>.</p>
 <div id="def-" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 2.1 (Variables and Observations <span class="citation" data-cites="Wic2014">[<a href="../../index.html#ref-Wic2014" role="doc-biblioref">1</a>]</span>)</strong></span> &nbsp;</p>
@@ -399,10 +385,10 @@ Random variables
 </div>
 </div>
 </section>
-<section id="data-visualization" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="data-visualization"><span class="header-section-number">2.3</span> Data Visualization</h2>
-<section id="qualitative-categorical-data" class="level3" data-number="2.3.1">
-<h3 data-number="2.3.1" class="anchored"><span class="header-section-number">2.3.1</span> Qualitative (categorical) data</h3>
+<section id="data-visualization" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="data-visualization"><span class="header-section-number">2.2</span> Data Visualization</h2>
+<section id="qualitative-categorical-data" class="level3" data-number="2.2.1">
+<h3 data-number="2.2.1" class="anchored"><span class="header-section-number">2.2.1</span> Qualitative (categorical) data</h3>
 <p>Usually the most important is the <strong>class relative frequency</strong>: <span class="math display">\[
 \text{class relative frequency}=\frac{\text{class frequency}}{n}.
 \]</span></p>
@@ -528,8 +514,8 @@ Example: Possums
 </div>
 </div>
 </div>
-<section id="quantitative-numerical-data" class="level3" data-number="2.3.2">
-<h3 data-number="2.3.2" class="anchored" data-anchor-id="quantitative-numerical-data"><span class="header-section-number">2.3.2</span> Quantitative (numerical) data</h3>
+<section id="quantitative-numerical-data" class="level3" data-number="2.2.2">
+<h3 data-number="2.2.2" class="anchored" data-anchor-id="quantitative-numerical-data"><span class="header-section-number">2.2.2</span> Quantitative (numerical) data</h3>
 <p>We would like to use <strong>histogram</strong> to display these type of data. In other words, we split the range into small segments (called <em>bins</em>), and count the frequency or relative frequency of data falling into these bins.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
@@ -602,8 +588,8 @@ Example: Possums
 </div>
 </div>
 </section>
-<section id="some-statistics" class="level3" data-number="2.3.3">
-<h3 data-number="2.3.3" class="anchored" data-anchor-id="some-statistics"><span class="header-section-number">2.3.3</span> Some statistics</h3>
+<section id="some-statistics" class="level3" data-number="2.2.3">
+<h3 data-number="2.2.3" class="anchored" data-anchor-id="some-statistics"><span class="header-section-number">2.2.3</span> Some statistics</h3>
 <p>For a quantitative data, we would also like to compute some statistics: minx, max, quartiles, median and mean. In R, we could use <code>summary</code> to compute them, and use box plots to show them.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
@@ -656,8 +642,8 @@ Example: Possums
 </div>
 </div>
 </section>
-<section id="relations-among-multiple-variables" class="level3" data-number="2.3.4">
-<h3 data-number="2.3.4" class="anchored" data-anchor-id="relations-among-multiple-variables"><span class="header-section-number">2.3.4</span> Relations among multiple variables</h3>
+<section id="relations-among-multiple-variables" class="level3" data-number="2.2.4">
+<h3 data-number="2.2.4" class="anchored" data-anchor-id="relations-among-multiple-variables"><span class="header-section-number">2.2.4</span> Relations among multiple variables</h3>
 <p>We could show the relation between two variables in a scatter plot.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
@@ -712,8 +698,8 @@ Example: Possums
 </div>
 </div>
 </section>
-<section id="p" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="p"><span class="header-section-number">2.4</span> p</h2>
+<section id="p" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="p"><span class="header-section-number">2.3</span> p</h2>
 <div id="def-" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 2.4 (Population)</strong></span> A <strong>population data set</strong> is a collection (or set) of data measured on all experimental units of interest to you. <span class="citation" data-cites="Men2020">[<a href="../../index.html#ref-Men2020" role="doc-biblioref">2</a>]</span></p>
 </div>
@@ -723,8 +709,8 @@ Example: Possums
 <div id="def-" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 2.6 (random sample)</strong></span> A <strong>random sample</strong> of <span class="math inline">\(n\)</span> experimental units is one selected from the population in such a way that every different sample of size <span class="math inline">\(n\)</span> has an equal probability of selection. <span class="citation" data-cites="Men2020">[<a href="../../index.html#ref-Men2020" role="doc-biblioref">2</a>]</span></p>
 </div>
-<section id="inferential-statistics" class="level3" data-number="2.4.1">
-<h3 data-number="2.4.1" class="anchored" data-anchor-id="inferential-statistics"><span class="header-section-number">2.4.1</span> Inferential statistics</h3>
+<section id="inferential-statistics" class="level3" data-number="2.3.1">
+<h3 data-number="2.3.1" class="anchored" data-anchor-id="inferential-statistics"><span class="header-section-number">2.3.1</span> Inferential statistics</h3>
 <div id="def-" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 2.7 (Statistical inference <span class="citation" data-cites="Men2020">[<a href="../../index.html#ref-Men2020" role="doc-biblioref">2</a>]</span>)</strong></span> &nbsp;</p>
 <ul>
@@ -751,9 +737,16 @@ Inferential statistics
 </ol>
 </div>
 </div>
-
-
 </section>
+</section>
+<section id="r-code" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="r-code"><span class="header-section-number">2.4</span> R code</h2>
+<p><code>pnorm</code></p>
+<p><code>qnorm</code></p>
+<p><code>dnorm</code></p>
+<p><code>rnorm</code></p>
+
+
 </section>
 </div>
 </div>
@@ -1187,18 +1180,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="../../contents/0/prob.html" class="pagination-link" aria-label="Probability theory">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Probability theory</span></span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="../../contents/0/inferences.html" class="pagination-link" aria-label="Inferences">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Inferences</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 
 

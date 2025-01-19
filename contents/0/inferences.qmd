@@ -145,9 +145,6 @@ Elements of a Statistical Test of Hypothesis
 
 
 
-
-
-
 ::: {.callout-note}
 # Type I error vs Type II error
 
