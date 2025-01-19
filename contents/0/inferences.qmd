@@ -145,6 +145,22 @@ Elements of a Statistical Test of Hypothesis
 
 
 
+
+
+
+::: {.callout-note}
+# Type I error vs Type II error
+
+Hypothesis test is built around the idea to control Type I error (=reducing false positive rate=increasing precision), since the significance level $\alpha$ is the probability of Type I errors (=the probability of rejecting $H_0$ when $H_0$ is actually right). 
+
+When using Hypothesis test, the scenario is usually that people capture some signals in order to prove an effect happens. The null hypothesis ($H_0$) is assumed to be the default case, and they want to make sure that once the signal is captured, the effect happens. In this case it is ok to miss some events that happens without the signal. In other words, people prioritize not making a false claim than missing an opportunity.
+:::
+
+
+
+
+
+
 ![](assests/img/20250118234700.png)
 ![](assests/img/20250118234719.png)
 ![](assests/img/20250118234743.png)
@@ -157,8 +173,7 @@ Elements of a Statistical Test of Hypothesis
 
 
 
-
-best linear unbiased estimator (BLUE)
+## best linear unbiased estimator (BLUE)
 
 ![](assests/img/20250118234628.png)
 

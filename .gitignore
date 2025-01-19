@@ -2,3 +2,4 @@
 venv/
 _freeze/
 doc/
+/.quarto/
