@@ -6,3 +6,9 @@
 3. rv independent<-> E(FG)=E(f)E(g)
 4. Cov decomposition
 5. some **1** computation
+
+
+```{python}
+import sys
+print(sys.version)
+```

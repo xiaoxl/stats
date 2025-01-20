@@ -13,7 +13,7 @@ execute:
   freeze: auto
 
 
-jupyter: ds24
+jupyter: stats
 
 knitr:
   opts_chunk:
