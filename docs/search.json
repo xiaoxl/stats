@@ -433,5 +433,15 @@
       "Random variables",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Inferences</span>"
     ]
+  },
+  {
+    "objectID": "contents/0/rv.html",
+    "href": "contents/0/rv.html",
+    "title": "Random variables",
+    "section": "",
+    "text": "Hermitian A eigenvalues real\nHermitian A diagonalizable: spectral decomposition\nrv independent&lt;-&gt; E(FG)=E(f)E(g)\nCov decomposition",
+    "crumbs": [
+      "Random variables"
+    ]
   }
 ]

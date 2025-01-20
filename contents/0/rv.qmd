@@ -1,3 +1,7 @@
 # Random variables
 
 
+1. Hermitian A eigenvalues real
+2. Hermitian A diagonalizable: spectral decomposition
+3. rv independent<-> E(FG)=E(f)E(g)
+4. Cov decomposition
