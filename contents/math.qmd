@@ -13,6 +13,13 @@ $$
 \newcommand{\me}{{\mathrm e}}
 $$
 
+
+<!-- Linear algebra -->
+
+$$
+\newcommand{\span}[1]{{\tt{Span}}\qty{#1}}
+$$
+
 <!-- Probability -->
 
 $$

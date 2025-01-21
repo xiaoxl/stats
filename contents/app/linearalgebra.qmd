@@ -1,0 +1,75 @@
+# Linear algebra
+
+
+{{< include ../math.qmd >}}
+
+
+## Hermitian matrices
+
+
+### Hermitian form
+
+complex vector space
+
+hermitian form
+
+hermitian invariant subspace
+
+
+
+
+### Hermitian matrix
+
+::: {#def-}
+# Hermitian matrix
+Let $A$ be a complex matrix. The *Hermitian Conjugate* of $A$ is $A^{\dagger}=\bar{A}^T$. If $A^{\dagger}=A$, then $A$ is called a *Hermitian matrix*.
+:::
+
+
+A Hermitian matrix can be used to define a Hermitian form. 
+
+
+
+::: {#thm-hermitianreal}
+Let $A$ be a Hermitian matrix. Then all its eigenvalues are real.
+:::
+::: {.proof}
+Let $\lambda$ be an eigenvalue of $A$, and $v$ be a corresponding eigenvector. Then $Av=\lambda v$. Now consider the Hermitian form defined by $A$. We have
+$$
+\bar{\lambda} \braket{v,v}= \braket{\lambda v,v}=\braket{Av, v}=(Av)^{\dagger}v=v^{\dagger}A^{\dagger}v=v^{\dagger}{A}v=v^{\dagger}\lambda v=\lambda\braket{v,v},\quad\text{for any } v.
+$$
+Therefore $\lambda=\bar{\lambda}$. Then $\lambda$ is real.
+:::
+
+
+
+::: {#thm-}
+# Spectral decomposition
+Any Hermitian matrix is diagonalizable.
+:::
+
+::: {.proof}
+Let $A$ be a Hermitian matrix. In $\mathbb C$, it has at least one eigenvalue by the fundamental theorem of algebra. By @thm-hermitianreal, the eigenvalue is real. Denote it by $\lambda_1$, and pick one corresponding eigenvector $v_1$. Add $v_1$ to our set $S$. Consider $\span S^{\perp}$. It is an $A$-invariant subspace.
+
+If $\span S^{\perp}\neq 0$, $A$ has at least one eigenvector in it. By @thm-hermitianreal, the eigenvalue $\lambda_2$ is real. Denote the corresponding eigenvector by $v_2$ and add it to $S$. The new $\span S^{\perp}$ is again $A$-invariant.
+
+Repeat the process until $\span S^{\perp}=0$. Then $S$ is a basis consisting of eigenvectors. So $A$ is diagonalizable.
+:::
+
+
+::: {#cor-}
+Let $A$ be a Hermitian matrix. Then there exists an Unitary matrix $Q$ and a real diagonal matrix $D$ such that $A=QDQ^T$.
+:::
+
+
+::: {#cor-}
+Let $A$ be a real symmetric matrix. Then there exists an orthnormal matrix $Q$ and a real diagonal matrix $D$ such that $A=QDQ^T$.
+:::
+
+
+
+
+::: {#def-}
+# Squareroot of a matrix
+Let $A$ be a real symmetric matrix. Then $A=QDQ^T$. Assume that all eigenvalues are positive. Then $QD^{1/2}Q^T$ is called the square root of $A$ and is denoted by $A^{1/2}$.
+:::

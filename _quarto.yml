@@ -59,6 +59,7 @@ book:
         - contents/2/slr.qmd
   appendices:
     - contents/app/specialfunctions.qmd
+    - contents/app/linearalgebra.qmd 
   sidebar:
     # background: "#D9E3E4"
     border: true
