@@ -33,28 +33,35 @@ A Hermitian matrix can be used to define a Hermitian form.
 ::: {#thm-hermitianreal}
 Let $A$ be a Hermitian matrix. Then all its eigenvalues are real.
 :::
-::: {.proof}
+
+<details>
+<summary>Proof</summary>
 Let $\lambda$ be an eigenvalue of $A$, and $v$ be a corresponding eigenvector. Then $Av=\lambda v$. Now consider the Hermitian form defined by $A$. We have
 $$
 \bar{\lambda} \braket{v,v}= \braket{\lambda v,v}=\braket{Av, v}=(Av)^{\dagger}v=v^{\dagger}A^{\dagger}v=v^{\dagger}{A}v=v^{\dagger}\lambda v=\lambda\braket{v,v},\quad\text{for any } v.
 $$
-Therefore $\lambda=\bar{\lambda}$. Then $\lambda$ is real.
-:::
+Therefore $\lambda=\bar{\lambda}$. Then $\lambda$ is real. 
+
+</details>
 
 
 
 ::: {#thm-}
-# Spectral decomposition
+## Spectral decomposition
 Any Hermitian matrix is diagonalizable.
 :::
 
-::: {.proof}
+<details>
+<summary>Proof</summary>
 Let $A$ be a Hermitian matrix. In $\mathbb C$, it has at least one eigenvalue by the fundamental theorem of algebra. By @thm-hermitianreal, the eigenvalue is real. Denote it by $\lambda_1$, and pick one corresponding eigenvector $v_1$. Add $v_1$ to our set $S$. Consider $\span S^{\perp}$. It is an $A$-invariant subspace.
 
 If $\span S^{\perp}\neq 0$, $A$ has at least one eigenvector in it. By @thm-hermitianreal, the eigenvalue $\lambda_2$ is real. Denote the corresponding eigenvector by $v_2$ and add it to $S$. The new $\span S^{\perp}$ is again $A$-invariant.
 
-Repeat the process until $\span S^{\perp}=0$. Then $S$ is a basis consisting of eigenvectors. So $A$ is diagonalizable.
-:::
+Repeat the process until $\span S^{\perp}=0$. Then $S$ is a basis consisting of eigenvectors. So $A$ is diagonalizable. 
+<hr>
+</details>
+
+
 
 
 ::: {#cor-}

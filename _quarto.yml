@@ -19,9 +19,19 @@ knitr:
   opts_chunk:
     comment: "#>"
     collapse: true
-
-
-
+ 
+    
+# custom-numbered-blocks:
+#   classes:
+#     # Theorem:
+#     #   colors: [948bde, 584eab]
+#     #   boxstyle: foldbox.simple
+#     #   collapse: false 
+#     Proof:
+#       numbered: false 
+# filters:
+#   - custom-numbered-blocks
+ 
 format:
   html:
     theme: united 
