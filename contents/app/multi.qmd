@@ -1,0 +1,13 @@
+# multi 
+
+
+{{< include ../math.qmd >}}
+
+
+consider random vector $T=<X_1,X_2,\ldots,X_n>$.
+
+
+::: {#thm-}
+1. $E(aT)=aE(T)$
+2. $Cov(AT)=ACov(T)A^T$.
+:::

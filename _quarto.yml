@@ -70,6 +70,7 @@ book:
   appendices:
     - contents/app/specialfunctions.qmd
     - contents/app/linearalgebra.qmd 
+    - contents/app/multi.qmd 
   sidebar:
     # background: "#D9E3E4"
     border: true
