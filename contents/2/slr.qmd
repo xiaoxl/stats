@@ -29,7 +29,12 @@ where
 - $y$: Dependent variable
 - $\Exp(y)$: Mean value of $y$
 - $\varepsilon$: Unexplainable or random error
+
+This model suggests that y will come back to its mean evautually. This is why it is called **regression** model.
 :::
+
+
+
 
 
 ::: {#def-}
@@ -45,7 +50,7 @@ The variables used to predict $y$ are called **independent variables** and are d
 3. Use the sample data to estimate unknown parameters in the model.
 4. Specify the probability distribution of $\varepsilon$, and estimate any unknown parameters of this distribution.
 5. Statistically check the usefulness of the model.
-6. CHeck the validity of the assumptions on $\varepsilon$, and make model modifications if necessary.
+6. Check the validity of the assumptions on $\varepsilon$, and make model modifications if necessary.
 7. When satisfied that the model is useful, and assumptions are met, use the model to make inferences.
 :::
 
@@ -70,7 +75,13 @@ where
 
 ### Fitting the model
 
-MLE=LSE
+MLE=LSE under the assumption that e is normal
+
+
+different estimators 
+
+
+
 
 first assuming that $\sigma$ is constant.
 
