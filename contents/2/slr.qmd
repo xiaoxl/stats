@@ -244,3 +244,59 @@ $$
 7. $\Var(SST)$
 8. $\Var(SSR)$
 9. $\Var(SSR)$
+
+
+
+## $\beta_1$
+
+hypotheis: $\beta_1\neq0$
+
+$\hat{\beta}_1$ is normal, so t-test:
+
+$$
+t=\frac{\hat{\beta}_1-0}{s_{\hat{\beta}_1}}=\frac{\hat{\beta}_1}{s/\sqrt{S_{xx}}},\quad s^2=\frac{SSE}{n-2}
+$$
+
+- one tailed test:
+  - Ha: $\beta_1<0$: $t<-t_{\alpha}$: $p=\Pr(t<t_c)$, $t_c<0$
+  - Ha: $\beta_1>0$: $t>t_{\alpha}$: $p=\Pr(t>t_c)$, $t_c>0$
+- two tailed test:
+  - Ha: $\beta_1\neq0$: $\abs{t}>t_{\alpha/2}$: $p=2\Pr(t>t_c)$, $t_c>0$
+
+$t_c$ is the computed value
+
+$\Pr(t>t_{\alpha})=\alpha=\Pr(\text{Type I error})=\Pr(\text{Reject }H_0\mid H_0\text{ is true.})$
+
+
+
+## coeffcient of correlation
+
+$$
+r=\frac{S_{xy}}{\sqrt{S_{xx}S_{yy}}}
+$$
+
+it is related to COV
+
+
+$\rho$ population coefficient of correlation, is estimated by $r$
+
+Hypothesis:
+
+$t=r\sqrt{n-2}/{sqrt{1-r^2}}$
+
+
+## coefficient of determination
+$$
+r^2=\frac{S_{yy}-SSE}{S_{yy}}=1-\frac{SSE}{S_{yy}}
+$$
+
+proportion of total saple variability of the y explained by the linear relationship between y and x
+
+About 100(r2)% of the sample variation in y (measured by the total sum
+of squares of deviations of the sample y-values about their mean ji) can be
+explained by (or attributed to) using x to predict yin the straight-line model.
+
+
+$$
+SSR=\sum(\hat y_i-\bar y)^2=\frac{S_{xy}^2}{S_{xx}}
+$$
