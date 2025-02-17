@@ -300,3 +300,23 @@ explained by (or attributed to) using x to predict yin the straight-line model.
 $$
 SSR=\sum(\hat y_i-\bar y)^2=\frac{S_{xy}^2}{S_{xx}}
 $$
+
+
+
+
+## predicted interval and confidence interval
+
+$\sigma_{\hat y}$
+
+Since $\bar y$ and $\hat{\beta}_1$ are independent, we have
+$$
+\begin{split}
+\Var(\hat y(x))&=\Var(\hat{\beta}_0+\hat{\beta}_1x)=\Var(\bar y-\hat{\beta}_1(x-\bar x))=\Var(\bar y)+(x-\bar x)^2\Var(\hat{\beta}_1)\\
+&=\frac1n\sigma^2+(x-\bar x)^2\frac1{S_{xx}}\sigma^2=\sigma^2\qty[\frac1n+\frac{(x-\bar x)^2}{S_{xx}}].
+\end{split}
+$$
+
+
+$$
+\Var(y-\hat y)=\sigma^2+\sigma^2\qty[\frac1n+\frac{(x-\bar x)^2}{S_{xx}}]=\sigma^2\qty[1+\frac1n+\frac{(x-\bar x)^2}{S_{xx}}].
+$$
