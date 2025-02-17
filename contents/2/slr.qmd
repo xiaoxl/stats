@@ -320,3 +320,32 @@ $$
 $$
 \Var(y-\hat y)=\sigma^2+\sigma^2\qty[\frac1n+\frac{(x-\bar x)^2}{S_{xx}}]=\sigma^2\qty[1+\frac1n+\frac{(x-\bar x)^2}{S_{xx}}].
 $$
+
+
+
+
+```{r}
+library(MASS)
+
+fit <- lm(medv~lstat, data=Boston)
+
+newx = data.frame(lstat=seq(1, 40, by=0.1))
+pred.int <- predict(fit, newx, interval='prediction')
+conf.int <- predict(fit, newx, interval='confidence')
+```
+
+Both `pred.int` and `conf.int` are matrices, where the first column is the fitted value, the second column and the third column are the corresponding interval bounds.
+
+
+```{r}
+plot(Boston$lstat, Boston$medv)
+
+lines(newx$lstat, pred.int[,1])
+
+lines(newx$lstat, pred.int[,2], col='red')
+lines(newx$lstat, pred.int[,3], col='red')
+
+lines(newx$lstat, conf.int[,2], col='blue')
+lines(newx$lstat, conf.int[,3], col='blue')
+```
+
