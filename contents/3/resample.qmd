@@ -1,0 +1,46 @@
+# Resample
+
+1. Resampling: The Big Picture
+Resampling refers to any technique that repeatedly draws samples from observed data to estimate statistical properties.
+It includes methods like:
+
+   - Leave-One-Out (LOO)
+   - Jackknife
+   - Bootstrap
+   - Permutation tests
+
+1. Leave-One-Out (LOO)
+   - Basic Idea: Remove one observation at a time and compute the statistic on the remaining data.
+   - Use Case: Often used in cross-validation for model evaluation.
+   - Relation to Jackknife: The jackknife is a generalization of leave-one-out, but instead of using LOO just for validation, it’s used to estimate bias and variance.
+
+   ✅ LOO vs. Jackknife:
+   - LOO is typically used for model evaluation (e.g., cross-validation).
+   - Jackknife is used for bias and variance estimation of an estimator.
+
+2. Jackknife
+   - Basic Idea: Systematically remove one (or more) observations at a time and recompute the statistic to estimate bias and variance.
+   - Types:
+       - Leave-One-Out Jackknife: Each sample is created by removing one observation.
+       - Delete-d Jackknife: Removes multiple observations per resample (useful for clustered data).
+       - Delete-One-Group Jackknife: Used in survey sampling by removing predefined groups instead of individual observations.
+
+   ✅ Relation to Bootstrap:
+   - The jackknife is a precursor to the bootstrap.
+   - Unlike the bootstrap, which creates many samples by random resampling, the jackknife systematically leaves out observations.
+
+4. Bootstrap
+   - Basic Idea: Create many resamples (with replacement) from the original dataset and compute the statistic on each resample.
+   - Stronger than Jackknife: Instead of systematically removing one observation at a time, the bootstrap randomly samples observations (allowing duplicates).
+   - More Computationally Intensive: Generates a larger number of resamples than the jackknife.
+   - Advantages over Jackknife:
+       - Works better for small samples.
+       - Provides better confidence interval estimates.
+
+![](assests/img/20250219100741.png)
+
+Key Takeaways:
+
+- LOO is used in cross-validation, while jackknife estimates variance & bias.
+- Jackknife is a systematic resampling method, whereas bootstrap is a random resampling method.
+- Bootstrap is more powerful but computationally expensive.

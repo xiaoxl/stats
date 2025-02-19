@@ -68,6 +68,10 @@ book:
       chapters:
         - contents/2/slr.qmd
         - contents/2/project1.qmd
+    - part: "misc"
+      chapters: 
+        - contents/3/resample.qmd
+        - contents/3/jackknife.qmd
   appendices:
     - contents/app/specialfunctions.qmd
     - contents/app/linearalgebra.qmd 

@@ -1,0 +1,39 @@
+# Delete-One Jackknife variance estimator
+
+
+## History
+
+There are many variations.
+###  delete-one, delete-d 
+
+The traditional jackknife (or leave-one-out jackknife) is a resampling technique used to estimate the variance, bias, and standard error of a statistical estimator. It is one of the earliest resampling methods, originally introduced by Maurice Quenouille (1949) and later extended by John Tukey (1958) for variance estimation.
+
+
+
+Key Developments
+- Quenouille (1949, 1956): Introduced the jackknife method for reducing bias in estimators.
+- Tukey (1958): Extended the jackknife to variance estimation, making it a practical tool for uncertainty quantification.
+- Shao and Wu (1989): Studied the properties of the delete-d jackknife, an extension where more than one observation is removed at a time.
+- Efron and Stein (1981): Discussed the relationship between the jackknife and bootstrap, showing how both methods perform in variance estimation.
+
+
+Miller (1974) - "The Jackknife: A Review"
+Miller’s 1974 paper, “The Jackknife: A Review”, is one of the most comprehensive early reviews of the jackknife method. It played a crucial role in consolidating knowledge about the theory, applications, and extensions of the jackknife technique.
+
+
+
+###  delete-one, delete-d 
+
+1. Adaptation to Survey Sampling (1970s–1980s): In survey statistics, independent observations cannot always be assumed, as responses are often collected in geographic or administrative units (e.g., cities, census tracts, schools).
+    - Krewski and Rao (1981): Proposed the delete-a-group jackknife, an extension where entire groups (rather than single observations) are deleted at a time.
+    - Wolter (1985, 2007): Formalized the delete-one-group jackknife, specifically tailored for survey sampling applications.
+    This adaptation allowed for more accurate variance estimation in complex survey designs, where standard variance formulas fail due to intra-group correlation.
+2. 
+
+## Formula
+
+Shao Rao: Jackknife inference for heteroscedastic linear regression models: A delete-group jackknife method to produce consistent vairance estimators irrespecitve of within-group correlations
+
+
+
+## Analysis
