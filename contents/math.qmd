@@ -50,4 +50,11 @@ $$
  \newcommand{\distpois}{\operatorname{Poisson}}
  \newcommand{\distnormal}{\operatorname{\mathcal N}}
 $$
+
+
+$$
+ \newcommand{\argmin}{\operatorname{argmin}}
+$$
+
+
 :::

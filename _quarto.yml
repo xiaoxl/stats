@@ -44,7 +44,7 @@ crossref:
 book:
   title: "Stats"
   subtitle: "Notes"
-  description: "Homepage Spring 2024."
+  description: "Homepage {{< var info.date >}}."
   author: "Xinli Xiao"
   date: last-modified
   chapters: 
@@ -68,6 +68,7 @@ book:
       chapters:
         - contents/2/slr.qmd
         - contents/2/project1.qmd
+        - contents/2/mlr.qmd
     - part: "misc"
       chapters: 
         - contents/3/resample.qmd
@@ -97,5 +98,5 @@ book:
 
 
 
-
+  
 

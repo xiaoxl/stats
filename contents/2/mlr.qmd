@@ -1,0 +1,286 @@
+# MLR
+
+
+{{< include ../math.qmd >}}
+
+
+## General form 
+
+
+::: {#def-}
+$$
+y=\beta_0+\beta_1x_1+\beta_2x_2+\ldots+\beta_kx_k+\epsilon
+$$
+where
+
+- $y$ is the dependent variable (response variable)
+- $x_1,\ldots,x_k$ are the independent variable 
+- $E(y)=\beta_0+\beta_1x_1+\beta_2x_2+\ldots+\beta_kx_k$ is the deterministic portion of the model
+- $\beta_i$ determines the contribution of the independent variable $x_i$
+
+Note that there might be relations among $x_i$'s.
+:::
+
+
+The steps are very similar to simple linear regression.
+
+1. Collect data.
+2. Hypothesize the form of the model.
+3. Estimate the unknown parameters $\beta_0,\ldots,\beta_k$.
+4. Specify the distribution of $\epsilon$ and estimate its $\sigma^2$.
+5. Evaluate the utility of the model, like checking p-values and $R^2$.
+6. Verify the model by checking the assumptions on $\epsilon$.
+7. Use the model. Analyze the prediction and make inferences.
+
+
+::: {.callout-note}
+## Assumptions about $\epsilon$
+1. For any given $x_i$, $\epsilon\sim \distnormal(0,\sigma^2)$.
+2. The random errors are independent.
+:::
+
+
+## A first-order model with quantitative predictors
+
+::: {#def-}
+## A First-Order Model in $k$ Quantitative Independent Variables
+$$
+E(y)=\beta_0+\beta_1x_1+\beta_2x_2+\ldots+\beta_kx_k
+$$
+where $x_1,\ldots,x_k$ are $k$ quantitative independent variables.
+:::
+
+After inputing the data, we have the following equations.
+
+$$
+y_i=\beta_0+\beta_1x_{i1}+\beta_2x_{i2}+\ldots+\beta_kx_{ik}+\epsilon_i,\quad i=1,\ldots,n.
+$$
+
+Write them in term of matrices:
+
+$$
+\mathbf{y}=\mqty[y_1\\\ldots\\y_n],\quad \mathbf{X}=\mqty[1&x_{11}&x_{12}&\ldots&x_{1k}\\\ldots&&&&\\1&x_{n1}&x_{n2}&\ldots&x_{nk}],\quad \boldsymbol{\beta}=\mqty[\beta_0\\\beta_1\\\ldots\\\beta_k],\quad \boldsymbol{\epsilon}=\mqty[\epsilon_1\\\ldots\\\epsilon_n].
+$$
+
+Then the model can be expressed as 
+$$
+\mathbf{y}=\mathbf{X}\boldsymbol{\beta}+\boldsymbol{\epsilon}
+$$
+
+The OLS estimator is used to minimize the square sum of residuals
+$$
+(\mathbf y-\mathbf X\boldsymbol{\beta})^T(\mathbf y-\mathbf X\boldsymbol{\beta}).
+$$
+
+Therefore 
+$$
+\boldsymbol{\hat{\beta}}=\argmin_{\beta}(\mathbf y-\mathbf X\boldsymbol{\beta})^T(\mathbf y-\mathbf X\boldsymbol{\beta}).
+$$
+
+
+::: {#thm-}
+## The OLS estimator
+The following estimator is an unbiased estimator of $\boldsymbol{\beta}$:
+$$
+\boldsymbol{\hat{\beta}}=\mathbf{(X^T X)^{-1}X^T y}
+$$
+In addition,
+$$
+\Var(\boldsymbol{\hat{\beta}})=\mathbf{(X^T X)}^{-1}\sigma^2.
+$$
+:::
+
+
+
+::: {.callout-note collapse="true"}
+## SLR case
+When $k=1$, we have
+
+$$
+\mathbf X=\mqty[1&1&\ldots&1\\x_1&x_2&\ldots&x_n],\quad \mathbf y=\mqty[y_1\\\ldots\\y_n].
+$$
+Then 
+
+$$
+\begin{split}
+\mathbf{X^T X}&=\mqty[1&1&\ldots&1\\x_1&x_2&\ldots&x_n]\mqty[1&x_1\\1&x_2\\\ldots&\\1&x_n]=\mqty[n&n\bar{x}\\n\bar x&\sum x_i^2],\\
+\mathbf{X^T y}&=\mqty[1&1&\ldots&1\\x_1&x_2&\ldots&x_n]\mqty[y_1\\\ldots\\y_n]=\mqty[n\bar y\\\sum x_iy_i],\\
+\mathbf{(X^T X)^{-1}X^T y}&=\mqty[n&n\bar{x}\\n\bar x&\sum x_i^2]^{-1}\mqty[n\bar y\\\sum x_iy_i]\\
+&=\frac{1}{n(\sum x_i^2)-n^2\bar x^2}\mqty[\sum x_i^2&-n\bar x\\-n\bar x&n]\mqty[n\bar y\\\sum x_iy_i]\\
+&=\frac{1}{n(\sum x_i^2)-n^2\bar x^2}\mqty[n(\sum x_i^2)\bar y-n\bar x(\sum x_iy_i)\\n(\sum x_iy_i)-n^2\bar x\bar y]\\
+&=\frac{1}{(\sum x_i^2)-n\bar x^2}\mqty[(\sum x_i^2)\bar y-\bar x(\sum x_iy_i)\\(\sum x_iy_i)-n\bar x\bar y]\\
+&=\frac{1}{\sum x_i^2-n\bar x^2}\mqty[(\sum x_i^2-n\bar x^2)\bar y+n\bar x^2\bar y-\bar x(\sum x_iy_i)\\\sum x_iy_i-n\bar x\bar y]\\
+&=\frac{1}{\sum x_i^2-n\bar x^2}\mqty[(\sum x_i^2-n\bar x^2)\bar y-\bar x(\sum x_iy_i-n\bar x\bar y)\\\sum x_iy_i-n\bar x\bar y].
+\end{split}
+$$
+
+Note that 
+
+$$
+\begin{split}
+S_{xx}&=\sum (x_i-\bar x)^2=\sum(x_i^2-2x_i\bar x+\bar x^2)=\sum x_i^2-2(\sum x_i)\bar x+n\bar x^2=\sum x_i^2-n\bar x^2,\\
+% S_{yy}&=\sum (y_i-\bar y)^2=\sum(y_i^2-2y_i\bar y+\bar y^2)=\sum y_i^2-2(\sum y_i)\bar y+n\bar y^2=\sum y_i^2-n\bar y^2,\\
+S_{xy}&=\sum (x_i-\bar x)(y_i-\bar y)=\sum(x_iy_i-x_i\bar y-y_i\bar x+\bar x\bar y)\\
+&=\sum x_iy_i-(\sum x_i)\bar y-(\sum y_i)\bar x+n\bar x\bar y=\sum x_iy_i-n\bar x\bar y,
+\end{split}
+$$
+
+We have
+
+$$
+\begin{split}
+\mathbf{(X^T X)^{-1}X^T y}&=\frac{1}{\sum x_i^2-n\bar x^2}\mqty[(\sum x_i^2-n\bar x^2)\bar y-\bar x(\sum x_iy_i-n\bar x\bar y)\\\sum x_iy_i-n\bar x\bar y]\\
+&=\frac{1}{S_{xx}}\mqty[S_{xx}(\bar y-\bar x(S_{xy}))\\S_{xy}]=\mqty[\bar y-\bar x(S_{xy}/S_{xx})\\S_{xy}/S_{xx}].
+\end{split}
+$$
+
+Therefore in the case of $k=1$, $\hat{\beta}_1=S_{xy}/S_{xx}$ and $\hat{\beta}_0=\bar y-\beta_1\bar x$.
+
+In addition, the variance of $\hat{\beta_1}$ is the (2,2)-entry of the variance-covariance matrix $\hat{\boldsymbol{\beta}}$. Since 
+
+$$
+\begin{split}
+\Var(\boldsymbol{\hat{\beta}})=\mathbf{(X^T X)}^{-1}\sigma^2=\frac{1}{n(\sum x_i^2)-n^2\bar x^2}\mqty[\sum x_i^2&-n\bar x\\-n\bar x&n]\sigma^2,
+\end{split}
+$$
+the (2,2)-entry is
+$$
+\begin{split}
+\Var(\hat{\beta_1})&=\frac{n}{n(\sum x_i^2-n\bar x^2)}\sigma^2=\frac{\sigma^2}{S_{xx}}.
+\end{split}
+$$
+:::
+
+
+
+::: {.callout-caution}
+In MLR, the multicolinearity between independent variables doesn't affect the unbiasedness of the OLS estimators. In other words, even if those independent variable are colinear, the OLS estimators is still BLUE (Best Linear Unbiased Estimators) to estimate $\boldsymbol{\hat{\beta}}$ as long as other standard assumptions hold. However, the variance and the stability may be impacted, and this may impact the later inference.
+
+- Multicollinearity inflates the variance of the estimated coefficients.
+- Even if a variable is genuinely important, its coefficient might not be statistically significant due to high standard errors.
+- The model might struggle to separate the effects of correlated predictors.
+:::
+
+
+## The analysis of variance
+
+1. $SSE=\sum (y_i-\hat{y}_i)^2$.
+2. $s^2=MSE=\frac{SSE}{n-(k+1)}$.
+
+Hypothesis test: 
+
+
+::: {#def-}
+# The Global $F$-Test
+
+- $H_0$: all $\beta_i$'s are $0$.
+- $H_a$: at least one $\beta_i$ is not $0$.
+- $F=\frac{MSR}{MSE}=\frac{(SST-SSE)/k}{SSE/[n-(k+1)]}$.
+- $p=\Pr(F>F_{\alpha})$.
+:::
+
+
+
+::: {#def-}
+# The individual $t$-Test for variable $\beta_i$
+
+- $H_0$: $\beta_i=0$.
+- $H_a$: $\beta_i\neq 0$.
+- $t=\frac{\hat{\beta}_i}{s_{\hat{\beta}_i}}$.
+- $p=\Pr(t>t_{\alpha})$.
+
+Note that these $\hat{\beta}_i$ and $s_{\hat{\beta}_i}$ directly come from the OLS estimators.
+:::
+
+
+
+::: {.callout-caution}
+1. You have to pass F-test to proceed. If not, stop and modify the model.
+2. Try to minimize the number of t-tests. Too many t-tests leads to a high overall Type I error rate.
+3. When a parameter is not significant, there are some possibilities:
+   - $y$ and $x_i$ don't have relations.
+   - They have a linear relation, but Type II error occurred.
+   - They have non-linear relations.
+:::
+
+
+## Evluation
+
+### $R^2$
+::: {#def-}
+## The multiple coefficient of determination
+$$
+R^2=1-\frac{SSE}{SST}.
+$$
+$R^2$ represents the fraction of the sample variation that is explained by the model.
+:::
+
+
+### $R_a^2$
+
+$R^2$ is a "hard" measurement for the model performance. However since adding more predictors always increases $R^2$ even if they are useless, we need a way to adjust for the number of predictors. This is the adjusted $R^2$.
+
+
+::: {#def-}
+## The adjusted multiple coefficient of determination
+$$
+R^2_a=1-\qty[\frac{(n-1)}{n-(k+1)}]\qty(\frac{SSE}{SST})=1-\qty[\frac{(n-1)}{n-(k+1)}]\qty(1-R^2).
+$$
+
+
+:::
+
+
+::: {.callout-note}
+1. $R_a^2\leq R^2$. 
+2. For poor-fitting models $R_a^2$ can be negative.
+3. The practical interpretation for $R_a^2$ is the fraction of the variance explained by the model adjusted for the sample size and the number of parameters.
+:::
+
+
+
+## Analysis of predictions
+
+
+
+## Residual analysis
+
+### Plots
+
+### Normality
+
+
+
+
+
+
+
+## Interaction and confounding
+
+
+
+
+## Dummy variable: qualitative variables
+
+
+
+## Collinearity in Multiple Linear Regression
+
+1. First issue about collinearity is that $\mathbf{X^T X}$ would be singular, or at least close to singular, that its inverse doesn't exist or the computation is very unstable. 
+2. The covariance matrix $\mathbf{(X^T X)}^{-1}\sigma^2$ will be extremely large, which means that the variance will be very large.
+
+
+::: {#def-}
+## The variance inflation factor
+The variance inflation factor for the ith coefficient is 
+$$
+VIF_i=\frac{1}{1-R^2_i}
+$$
+where $R_i^2$ is the $R^2$ of regression produced by regressing $x_i$ against other $x_j$'s. If one variable is colinear to other variables, its VIF is supposed to be $\infty$. If not, its VIF is supposed to be $1$.
+:::
+
+Usually if VIF is more than 5 or 10, multicollinearity may be a problem.
+
+
+
+![](assests/img/20250302154333.png)
