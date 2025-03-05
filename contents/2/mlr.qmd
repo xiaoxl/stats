@@ -17,10 +17,15 @@ where
 - $x_1,\ldots,x_k$ are the independent variable 
 - $E(y)=\beta_0+\beta_1x_1+\beta_2x_2+\ldots+\beta_kx_k$ is the deterministic portion of the model
 - $\beta_i$ determines the contribution of the independent variable $x_i$
-
-Note that there might be relations among $x_i$'s.
 :::
 
+
+::: {.callout-note}
+Note that there might be relations among $x_i$'s.
+
+- If $x_2=x_1^2$, $x_2$ is called a **higher-order term**.
+- If $x_3=1$ in some cases and $0$ in some other cases, $x_3$ is called a **coded variable**. This is an example of categorical variables in regression.
+:::
 
 The steps are very similar to simple linear regression.
 
@@ -162,6 +167,9 @@ In MLR, the multicolinearity between independent variables doesn't affect the un
 :::
 
 
+
+
+
 ## The analysis of variance
 
 1. $SSE=\sum (y_i-\hat{y}_i)^2$.
@@ -177,6 +185,8 @@ Hypothesis test:
 - $H_a$: at least one $\beta_i$ is not $0$.
 - $F=\frac{MSR}{MSE}=\frac{(SST-SSE)/k}{SSE/[n-(k+1)]}$.
 - $p=\Pr(F>F_{\alpha})$.
+
+Note that since $F$-statistics is always positive, we only need to compute one tail of it.
 :::
 
 
@@ -187,7 +197,7 @@ Hypothesis test:
 - $H_0$: $\beta_i=0$.
 - $H_a$: $\beta_i\neq 0$.
 - $t=\frac{\hat{\beta}_i}{s_{\hat{\beta}_i}}$.
-- $p=\Pr(t>t_{\alpha})$.
+- $p=\Pr(\abs{t}>t_{\alpha})$.
 
 Note that these $\hat{\beta}_i$ and $s_{\hat{\beta}_i}$ directly come from the OLS estimators.
 :::
@@ -201,6 +211,74 @@ Note that these $\hat{\beta}_i$ and $s_{\hat{\beta}_i}$ directly come from the O
    - $y$ and $x_i$ don't have relations.
    - They have a linear relation, but Type II error occurred.
    - They have non-linear relations.
+:::
+
+
+
+
+::: {#exm-}
+## a simple R code example
+
+In base R, we need the following command to perform manual operations:
+
+- `as.matrix` to convert a `data.frame` into a `matrix`.
+- `%*%` is for matrix multiplication.
+- `t` is the transpose of a matrix.
+- `solve` is used to compute the inverse of a matrix.
+- `cbind` is to combine two matrices horizontally. (`rbind` is to combine matrices vertically, but we don't need it here.)
+
+Then once you have two dataframes `dfX` and `dfY`, the following code can be used to compute the OLS estimators.
+
+
+```{r}
+#| eval: false
+
+X <- as.matrix(dfX)
+X <- cbind(1, X)
+y <- as.matrix(dfY)
+beta <- solve(t(X) %*% X) %*% t(X) %*% y
+```
+
+To compute the variance, we should first estimate $\sigma^2$.
+
+```{r}
+#| eval: false
+
+yhat <- X %*% beta
+SSE <- sum((y-yhat)^2)
+n <- dim(X)[1]
+k <- dim(X)[2] - 1
+s2 <- SSE/(n-(k+1))
+var_beta <- s2 * solve(t(X) %*% X)
+```
+We could use `diag` to extract the diagonal to get variance and ignore all the covariance terms. Then apply `sqrt` to get the standard errors.
+
+```{r}
+#| eval: false
+
+se_beta <- sqrt(diag(var_beta))
+```
+
+From here, we could compute the corresponding $t$-tests and $F$-test, by the formula $t=\frac{\hat{\beta}}{s_{\hat{\beta}}}$ and $F=\frac{MSR}{MSE}$.
+
+
+```{r}
+#| eval: false
+
+t <- beta / se_beta
+MSR <- sum((y_hat-mean(y))^2) / k
+MSE <- s2
+F <- MSR/MSE
+```
+
+After we get the statistics, we could conduct the corresponding test by checking the p-values.
+
+```{r}
+#| eval: false
+
+p_t <- pt(abs(t), n-(k+1), lower.tail = FALSE) + pt(-abs(t), n-(k+1)) 
+p_f <- pf(F, k, n-(k+1), lower.tail = FALSE)
+```
 :::
 
 
