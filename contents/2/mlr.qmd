@@ -343,6 +343,11 @@ Exteprelation is **dangerous**.
 
 ## Dummy variables
 
+R use factors to regonze processable categorical data.
+
+`lm` function will automatically cast processiable categorical data into dummy variables.
+
+
 
 CARGO has durable, fragile and semifrag
 
