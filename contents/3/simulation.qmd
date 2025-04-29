@@ -1,0 +1,65 @@
+# Simulation
+
+{{< include ../math.qmd >}}
+
+
+::: {#exm-}
+In this question, you will create some **simulated data** and will fit simple linear regression models to it. Ensure consistent results in your R code by including `set.seed(123)` at the start of your script, and use it only once at the beginning.
+
+a. Follow the steps below to create a group of simulated data.
+
+- Step 1: [Given vector `x`] – Use the provided vector `x` (with a length of 100) as follows:
+```{r}
+set.seed(123)
+
+x <- c(3.54, 3.66, 2.87, 0.80, 3.65, 1.78, 5.36, 5.04, 9.45, 3.41,
+4.65, 0.83, 8.60, 3.96, 7.36, 1.72, 4.55, 7.70, 0.63, 8.15,
+3.01, 3.65, 3.12, 0.37, 5.19, 6.79, 9.03, 0.26, 9.89, 3.03,
+9.39, 6.88, 4.47, 8.16, 0.39, 7.39, 3.49, 8.29, 5.36, 2.75,
+8.01, 0.92, 8.32, 2.77, 7.53, 9.64, 0.81, 8.54, 8.02, 3.85,
+3.28, 2.05, 5.69, 8.88, 5.30, 5.87, 6.66, 5.30, 5.10, 0.16,
+0.48, 9.29, 7.69, 2.01, 6.50, 6.54, 3.95, 8.12, 5.47, 8.85,
+5.53, 9.06, 5.87, 4.23, 9.50, 7.09, 4.13, 0.18, 5.67, 4.90,
+8.79, 8.13, 8.54, 3.68, 8.74, 1.51, 2.82, 6.67, 9.77, 5.83,
+5.27, 0.61, 9.69, 1.20, 0.88, 8.81, 5.08, 3.37, 8.94, 0.32)
+```
+- Step 2: [Generate random error eps] – Using the `rnorm()` function, create a vector `eps`, containing 100 observations drawn from a $\distnormal(0, 0.25)$ distribution - a nor-
+mal distribution with mean zero and variance 0.25. (Note: Keep in mind that in the `rnorm()` function, the `sd` parameter represents the standard deviation, not the variance.)
+
+```{r}
+eps <- rnorm(100, mean=0, sd=0.5)
+```
+
+- Step 3: [Generate vector `y`] – Using `x` and `eps`, generate a vector `y` according to the model
+
+$$
+Y=-1+0.5X+e
+$$
+
+```{r}
+y <- -1+0.5*x+eps
+```
+
+b. Create a scatterplot displaying the relationship between `x` and `y`. Comment on what you observe.
+
+```{r}
+plot(x, y)
+abline(-1, 0.5)
+```
+
+c. Fit a least squares linear model predict `y` using `x`. Comment on the model obtained based on $R^2$. How do $\hat{\beta}_0$ and $\hat{\beta}_1$ compare to $\beta_0$ and $\beta_1$? How does $\hat{\sigma}$ compare to $\sigma$?
+
+```{r}
+model <- lm(y~x)
+plot(x, y)
+abline(-1, 0.5)
+abline(model$coefficients, col='red')
+```
+
+
+
+```{r}
+summary(model)$sigma
+```
+
+:::

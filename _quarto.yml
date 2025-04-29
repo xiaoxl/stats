@@ -17,7 +17,7 @@ jupyter: stats
 
 knitr:
   opts_chunk:
-    comment: "#>"
+    # comment: "#>"
     collapse: true
  
     
@@ -72,6 +72,7 @@ book:
         - contents/2/misc.qmd
     - part: "misc"
       chapters: 
+        - contents/3/simulation.qmd
         - contents/3/resample.qmd
         - contents/3/jackknife.qmd
   appendices:
