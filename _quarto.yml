@@ -33,8 +33,11 @@ knitr:
 #   - custom-numbered-blocks
  
 format:
-  html:
-    theme: united 
+  bookup-html:
+        toc: true
+        toc-depth: 3
+  # html:
+  #   theme: united 
     # page-layout: article
     # include-before-body: 
     # - file: contents/math.qmd
@@ -85,7 +88,10 @@ book:
     search: true
     collapse-level: 1
     pinned: true
-    # style: docked
+    style: "docked"
+    # style: "floating"
+    downloads: [pdf]
+    reader-mode: true
     align: center
     # tools:
     #   - icon: github
@@ -93,8 +99,9 @@ book:
     #     href: https://github.com/xiaoxl/stats
   # navbar:
   #   subtitle: "2023 Fall"
-  #   pinned: false
+  #   pinned: true
   page-navigation: false
+  bread-crumbs: false
 
 
 

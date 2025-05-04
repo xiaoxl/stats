@@ -63,3 +63,65 @@ summary(model)$sigma
 ```
 
 :::
+
+
+
+
+## SWD
+
+$$
+y_{ijk}=\alpha+\omega_j+L_{ij}\theta+\gamma_i+\tau_{ik}+\varepsilon_{ijk},\quad 1\leq i\leq G,\quad 1\leq j\leq J.
+$$
+
+- $G$ groups, $J$ sessions.
+
+
+
+```{r}
+set.seed(123)
+
+# Parameters
+G <- 10      # groups i
+J <- 5       # levels j
+K <- 8       # subjects k
+p <- 3       # number of covariates
+
+alpha <- 2                   # Intercept
+theta <- c(1.5, -0.8, 0.5)   # Coefficients for L
+sigma_gamma <- 1             # SD of gamma_i
+sigma_tau <- 0.5             # SD of tau_ik
+sigma_eps <- 0.3             # SD of epsilon_ijk
+omega <- rnorm(J, 0, 1)      # Fixed/random effect for level j
+
+# Storage
+n <- G * J * K
+data <- data.frame(
+  i = rep(1:G, each = J*K),
+  j = rep(rep(1:J, each = K), G),
+  k = rep(1:K, times = G*J)
+)
+
+# Random effects
+gamma_i <- rnorm(G, 0, sigma_gamma)
+tau_ik <- rnorm(n, 0, sigma_tau)
+eps_ijk <- rnorm(n, 0, sigma_eps)
+
+# Covariates L_ij
+L <- matrix(rnorm(n * p), nrow = n, ncol = p)
+
+# Simulate response
+data$y <- alpha +
+          omega[data$j] +
+          rowSums(L * matrix(theta, nrow = n, ncol = p, byrow = TRUE)) +
+          gamma_i[data$i] +
+          tau_ik +
+          eps_ijk
+
+# Attach covariates
+for (k in 1:p) {
+  data[[paste0("L", k)]] <- L[, k]
+}
+
+head(data)
+
+```
