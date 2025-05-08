@@ -1,0 +1,41 @@
+
+{{< include ../math.qmd >}}
+
+
+# Linear regression
+
+
+## bias variance trade off
+$$
+\begin{aligned}
+\Exp\mqty[(y_0-\hat f(x_o))^2]&=\Var[y_0-\hat f(x_0)]+\qty(\Exp\mqty[y_0-\hat f(x_0)])^2=\Var[y_0-\hat f(x_0)]+\qty(\Exp[y_0]-\Exp[\hat f(x_0)])^2
+\end{aligned}
+$$
+
+
+## classification 
+
+### bayes classifier
+
+bayes classifier produces the lowest test error rate
+
+Hastie, Tibshirani, and Friedman (2009)
+The Elements of Statistical Learning, 2nd Edition.
+Chapter 2: Overview of Supervised Learning, particularly Section 2.4 ("Risk and Expected Prediction Error").
+
+This result is sometimes also introduced in more introductory texts like:
+
+Duda, Hart, and Stork (2000)
+Pattern Classification, 2nd Edition.
+Chapter 2: Bayes Decision Theory.
+
+For a more theoretical treatment:
+
+Devroye, Györfi, and Lugosi (1996)
+A Probabilistic Theory of Pattern Recognition
+Theorem 2.2 proves that the Bayes classifier has the lowest possible probability of error — also known as the Bayes risk.
+
+
+### Knn classifier
+
+similar to bayes classifier, but you can control k to change the flexibility of the model

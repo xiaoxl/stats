@@ -79,6 +79,11 @@ book:
         - contents/3/simulation.qmd
         - contents/3/resample.qmd
         - contents/3/jackknife.qmd
+    - part: "statistical learning"
+      chapters: 
+        - contents/4/lr.qmd
+        # - contents/4/resample.qmd
+        # - contents/4/jackknife.qmd
   appendices:
     - contents/app/specialfunctions.qmd
     - contents/app/linearalgebra.qmd 
