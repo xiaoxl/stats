@@ -70,8 +70,6 @@ The Gauss-Markov theorem guarantees that under certain conditions, the Ordinary 
 -   The errors are uncorrelated. If these conditions hold, then the OLS estimator is the best linear unbiased estimator in terms of minimum variance.
 -   
 
-
-
 ## MLE
 
 invariance
@@ -80,12 +78,7 @@ invariance
 
 ## Batch means
 
-
-
-
-
-
 ## correlated data
 
-- violate assumptions so many calculations cannot be done
-- if you really want to do, the estimation is still unbiased, but the vairance is wrong, which will effect many things.
+-   violate assumptions so many calculations cannot be done
+-   if you really want to do, the estimation is still unbiased, but the vairance is wrong, which will effect many things.
