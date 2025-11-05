@@ -32,7 +32,7 @@ knitr:
 #       numbered: false 
 # filters:
 #   - custom-numbered-blocks
- 
+
 format:
   bookup-html:
         toc: true

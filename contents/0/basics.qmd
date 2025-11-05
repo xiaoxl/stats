@@ -3,12 +3,7 @@
 
 
 
-```{r}
-#| echo: false
-#| output: false
-library(reticulate)
-use_virtualenv("../../venv")
-```
+
 
 
 ## Population vs Sample
